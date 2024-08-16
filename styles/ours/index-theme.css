@@ -1,5 +1,5 @@
 :root{
-    --logoHeight: 128px;
+    --logoHeight: 160px;
 }
 .the-logo-holder {
     display: flex;
@@ -19,5 +19,6 @@
     display: flex;
     flex: 1;
 
+    justify-content: center;
     text-align: center;
 }
