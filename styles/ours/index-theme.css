@@ -1,0 +1,26 @@
+:root{
+    --logoHeight: 128px;
+}
+.the-logo-holder {
+    display: flex;
+    flex: 0.5;
+
+    width: 100%;
+
+    align-items: end;
+    justify-content: center;
+}
+.the-sigma-logo {
+    display: flex;
+
+    height: var(--logoHeight);
+
+    filter: drop-shadow(0px 4px 8px var(--shadowColor));
+    mix-blend-mode: multiply;
+}
+.the-mission {
+    display: flex;
+    flex: 1;
+
+    text-align: center;
+}

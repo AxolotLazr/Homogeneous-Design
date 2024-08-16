@@ -2,9 +2,14 @@
     --borderWidth: 2px;
     --borderRadius: 16px;
 
+    --edgeBoxSize: 64px;
+
     --gutterWidth: 4px;
 
     --hoverRise: 2px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
 }
 
 body {
@@ -20,6 +25,9 @@ body {
 }
 
 .the-common-ancestor {
+    display: flex;
+    flex-direction: column;
+
     position: absolute;
     left: 0%;
     right: 0%;
@@ -27,18 +35,19 @@ body {
     bottom: 0%;
 }
 .the-top-holder {
-    position: sticky;
+    display: flex;
+
     left: 0%;
     right: 0%;
     top: 0%;
-    height: 64px;
+    height: var(--edgeBoxSize);
 }
 .the-top-bar {
-    position: absolute;
+    position: fixed;
     left: 0%;
     right: 0%;
     top: 0%;
-    height: 100%;
+    height: var(--edgeBoxSize);
     background-color: var(--themeColor2);
     box-shadow: 0px 4px 8px 0px var(--shadowColor);
     transition-duration: 0.2s;
