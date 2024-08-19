@@ -6,7 +6,7 @@
 
     /* Outline colors */
     --preHighlightOverlayColor: rgb(244,255,248,0);
-    --highlightOverlayColor: rgb(244,255,248,0.5);
+    --highlightOverlayColor: rgb(244,255,248,0.3);
 
     /* Text colors */
     --textColor: rgb(136, 128, 144);

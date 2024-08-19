@@ -22,7 +22,7 @@
     --shadowBlur: 8px;
     --shadowWidth: 4px;
     --shadowDistance: 2px;
-    --shadowRise: 2px;
+    --shadowRise: 4px;
     --shadowGrow: 1px;
 }
 
@@ -170,9 +170,6 @@ body {
 
     border-radius: var(--borderRadius);
 }
-.the-top-options:hover {
-    box-shadow: inset 0px 0px 0px var(--borderWidth) var(--highlightOverlayColor);
-}
 
 .the-bottom-holder {
     display: flex;
@@ -206,15 +203,42 @@ body {
     display: flex;
 
     position: relative;
+    bottom: 0px;
     width: calc(var(--edgeBoxSize) - (var(--edgeGutter) + var(--gutterWidth)*3));
     margin: var(--gutterWidth);
     background-color: var(--themeColor3);
-    box-shadow: 0px var(--shadowDistance) var(--shadowBlur) var(--shadowColor);
 
     border-radius: 50%;
 }
 .the-bottom-theme-switch > input {
     visibility: hidden;
+}
+
+.the-shadow-set {
+    bottom: 0px;
+    box-shadow: 0px var(--shadowDistance) var(--shadowBlur) var(--shadowColor);
+}
+.the-shadow-set:hover {
+    cursor: pointer;
+    bottom: var(--hoverRise);
+    box-shadow: 0px var(--shadowRise) var(--shadowBlur) var(--shadowGrow) var(--shadowColor), inset 0px 0px 0px var(--borderWidth) var(--highlightOverlayColor);
+}
+.the-shadow-set:active {
+    bottom: 0px;
+    box-shadow: 0px var(--shadowDistance) var(--shadowBlur) var(--shadowColor), inset 0px 0px 0px var(--borderWidth) var(--highlightOverlayColor);
+}
+
+.the-hover-set {
+    bottom: 0px;
+}
+.the-hover-set:hover {
+    cursor: pointer;
+    bottom: var(--hoverRise);
+    box-shadow: inset 0px 0px 0px var(--borderWidth) var(--highlightOverlayColor);
+}
+.the-hover-set:active {
+    bottom: 0px;
+    box-shadow: inset 0px 0px 0px var(--borderWidth) var(--highlightOverlayColor);
 }
 
 flexSpacer {
