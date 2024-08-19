@@ -1,18 +1,34 @@
 :root{
-    --borderWidth: 2px;
-    --borderRadius: 16px;
-
-    --edgeGutter: 12px;
+    /* Size variables */
     --edgeBoxSize: 64px;
     --searchSize: 512px;
 
+    /* Outline variables */
+    --borderWidth: 2px;
+    --borderRadius: 16px;
+
+    /* Gutter variables */
     --gutterWidth: 4px;
+    --edgeGutter: 12px;
 
     --hoverRise: 2px;
     
-    color: var(--textColor);
+    /* Text variables */
     font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
+
+    /* Shadow variables */
+    --shadowBlur: 8px;
+    --shadowWidth: 4px;
+    --shadowDistance: 2px;
+    --shadowRise: 2px;
+    --shadowGrow: 1px;
+}
+
+* {
+    color: var(--textColor);
+
+    transition-duration: 0.2s;
 }
 
 body {
@@ -24,7 +40,18 @@ body {
     margin: 0px;
     padding: 0px;
     background-color: var(--themeColor1);
-    box-shadow: inset 0px 0px 8px 4px var(--shadowColor);
+}
+
+.the-edge-shadow {
+    z-index: 10;
+    pointer-events: none;
+
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    box-shadow: inset 0px 0px var(--edgeGutter) var(--gutterWidth) var(--shadowColor);
 }
 
 .the-common-ancestor {
@@ -52,7 +79,7 @@ body {
     top: 0%;
     height: var(--edgeBoxSize);
     background-color: var(--themeColor2);
-    box-shadow: 0px 4px 8px 0px var(--shadowColor), inset 0px 0px 0px var(--borderWidth) var(--preHighlightOverlayColor);
+    box-shadow: 0px 4px var(--shadowBlur) 0px var(--shadowColor), inset 0px 0px 0px var(--borderWidth) var(--preHighlightOverlayColor);
     transition-duration: 0.2s;
 
     border-radius: 0px 0px var(--borderRadius) var(--borderRadius);
@@ -61,10 +88,10 @@ body {
     outline-color: var(--preHighlightOverlayColor);
 }
 .the-top-bar:hover {
-    box-shadow: var(--hoverRise) 4px 8px calc(var(--hoverRise)/2) var(--shadowColor);
+    box-shadow: 0px var(--shadowRise) var(--shadowBlur) var(--shadowGrow) var(--shadowColor);
 }
 .the-top-bar:hover:not(:has(.matter-child:hover)) {
-    box-shadow: var(--hoverRise) 4px 8px calc(var(--hoverRise)/2) var(--shadowColor), inset 0px 0px 0px var(--borderWidth) var(--highlightOverlayColor);
+    box-shadow: 0px 4px 8px calc(var(--hoverRise)/2) var(--shadowColor), inset 0px 0px 0px var(--borderWidth) var(--highlightOverlayColor);
 }
 .the-holder-in-the-top {
     display: flex;
@@ -72,15 +99,21 @@ body {
     flex-grow: 1;
 
     position: absolute;
-    left: var(--edgeGutter);
-    right: var(--edgeGutter);
-    top: var(--edgeGutter);
-    bottom: var(--gutterWidth);
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: var(--edgeGutter);
+    margin-bottom: var(--gutterWidth);
 }
 .the-top-bar-logo {
     display: flex;
 
     position: relative;
+    height: 100%;
+
+    filter: invert(var(--logoInvert));
+    opacity: var(--logoOpacity);
 }
 .the-top-search-bar {
     display: flex;
@@ -138,6 +171,41 @@ body {
 }
 .the-top-options:hover {
     box-shadow: inset 0px 0px 0px var(--borderWidth) var(--highlightOverlayColor);
+}
+
+.the-bottom-holder {
+    position: fixed;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    height: var(--edgeBoxSize);
+}
+.the-bottom-inner-holder {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: var(--edgeGutter);
+    margin-top: var(--gutterWidth);
+}
+.the-bottom-theme-switch {
+    display: flex;
+
+    position: relative;
+    width: calc(var(--edgeBoxSize) - (var(--edgeGutter) + var(--gutterWidth)*3));
+    margin: var(--gutterWidth);
+    background-color: var(--themeColor3);
+    box-shadow: 0px var(--shadowDistance) var(--shadowBlur) var(--shadowColor);
+
+    border-radius: var(--borderRadius);
+}
+.the-bottom-theme-switch > input {
+    visibility: hidden;
 }
 
 flexSpacer {

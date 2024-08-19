@@ -14,6 +14,9 @@
     display: flex;
 
     height: var(--logoHeight);
+    
+    filter: invert(var(--logoInvert));
+    opacity: var(--logoOpacity);
 }
 .the-mission {
     display: flex;

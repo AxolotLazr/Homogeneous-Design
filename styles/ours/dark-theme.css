@@ -1,6 +1,21 @@
 :root {
-    --themeColor1: rgb(34, 32, 36);
-    --themeColor2: rgb(52, 48, 60);
+    /* Basic colors */
+    --themeColor1: rgb(72, 64, 80);
+    --themeColor2: rgb(104, 96, 112);
+    --themeColor3: rgb(88, 80, 96);
 
-    --shadowColor: rgb(20, 16, 24);
+    /* Outline colors */
+    --preHighlightOverlayColor: rgb(244,255,248,0);
+    --highlightOverlayColor: rgb(244,255,248,0.5);
+
+    /* Text colors */
+    --textColor: rgb(64, 68, 72);
+    --textColorLight: rgb(160, 164, 168);
+
+    /* Shadow colors */
+    --shadowColor: rgb(40, 32, 48);
+
+    /* Logo colors */
+    --logoInvert: 1;
+    --logoOpacity: 0.5;
 }

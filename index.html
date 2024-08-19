@@ -3,12 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="styles/ours/shared-theme.css">
-        <link rel="stylesheet" type="text/css" href="styles/ours/index-theme.css">
-        <link rel="stylesheet" type="text/css" href="styles/ours/light-theme.css">
+        <link id="base-theme" rel="stylesheet" type="text/css" href="styles/ours/shared-theme.css">
+        <link id="page-theme" rel="stylesheet" type="text/css" href="styles/ours/index-theme.css">
+        <link id="color-theme" rel="stylesheet" type="text/css" href="styles/ours/light-theme.css">
         <title>Homo</title>
     </head>
     <body>
+        <div class="the-edge-shadow"></div>
         <div class="the-common-ancestor">
             <div class="the-top-holder">
                 <div class="the-top-bar">
@@ -31,6 +32,16 @@
                 <br>
                 Curated with the purpose of allowing developers to design things that integrate seemlessly with their desired platform.
             </div>
-        </div> 
+            <div class="the-bottom-holder">
+                <div class="the-bottom-inner-holder">
+                    <label class="the-bottom-theme-switch">
+                        <input type="checkbox" checked onchange="switchTheme()">
+                        <div></div>
+                    </label>
+                    <flexSpacer style="--size:1;"></flexSpacer>
+                </div>
+            </div>
+        </div>
+        <script src="scripts/shared-scripts.js"></script>
     </body>
 </html>
