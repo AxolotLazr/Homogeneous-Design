@@ -10,6 +10,7 @@
     /* Gutter variables */
     --gutterWidth: 4px;
     --edgeGutter: 12px;
+    --textEdgeGutter: 32px;
 
     --hoverRise: 2px;
     
@@ -202,7 +203,7 @@ body {
     background-color: var(--themeColor3);
     box-shadow: 0px var(--shadowDistance) var(--shadowBlur) var(--shadowColor);
 
-    border-radius: var(--borderRadius);
+    border-radius: 50%;
 }
 .the-bottom-theme-switch > input {
     visibility: hidden;

@@ -1,5 +1,7 @@
 :root{
     --logoHeight: 160px;
+
+    --missionWidth: calc(128px*5);
 }
 .the-logo-holder {
     display: flex;
@@ -18,10 +20,16 @@
     filter: invert(var(--logoInvert));
     opacity: var(--logoOpacity);
 }
-.the-mission {
+.the-mission-holder {
     display: flex;
+    flex-direction: row;
     flex: 1;
 
     justify-content: center;
     text-align: center;
+}
+.the-mission {
+    display: flex;
+    
+    width: var(--missionWidth);
 }
