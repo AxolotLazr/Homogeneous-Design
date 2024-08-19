@@ -175,6 +175,14 @@ body {
 }
 
 .the-bottom-holder {
+    display: flex;
+
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    height: var(--edgeBoxSize);
+}
+.the-bottom-bar {
     position: fixed;
     left: 0%;
     right: 0%;
