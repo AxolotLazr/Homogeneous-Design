@@ -1,15 +1,3 @@
-let ColorTheme = false;
-let HotTheme1 = 'corpo-dark';
-let HotTheme2 = 'plum';
-let SetTheme = '';
-
-updateTheme();
-
-function toggleTheme() {
-    ColorTheme = !ColorTheme;
-
-    updateTheme();
-}
 function updateTheme() {
     if (ColorTheme) {
         SetTheme = HotTheme2;
@@ -20,8 +8,4 @@ function updateTheme() {
     }
     
     document.getElementById('color-theme').setAttribute('href', 'styles/ours/'+SetTheme+'-theme.css');
-}
-
-function checkTheme() {
-    return document.getElementById('color-theme').getAttribute('href');
 }

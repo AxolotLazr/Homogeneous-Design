@@ -1,0 +1,11 @@
+.the-viewport {
+    display: flex;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+
+    position: relative;
+    width: calc(1920px/4);
+    margin: var(--edgeGutter);
+
+    border-radius: var(--borderRadius);
+}

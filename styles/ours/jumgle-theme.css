@@ -1,0 +1,24 @@
+:root {
+    /* Basic colors */
+    --themeColor1: rgb(96, 160, 132);
+    --themeColor2: rgb(32, 64, 48);
+    --themeColor3: rgb(8, 16, 12);
+
+    /* Outline colors */
+    --preHighlightOverlayColor: rgb(0, 0, 0, 0);
+    --highlightOverlayColor: rgb(64, 255, 200, 0.6);
+
+    /* Text colors */
+    --textColor: rgb(200, 216, 208);
+    --textColorLight: rgb(160, 176, 200);
+
+    /* Shadow colors */
+    --shadowColor: rgb(8, 16, 12);
+
+    /* Logo colors */
+    --iconColor: -140deg;
+    --iconSaturate: 30%;
+    --iconBrightness: 100%;
+    --iconOpacity: 1;
+    --iconInvert: 0;
+}
