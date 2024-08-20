@@ -15,10 +15,9 @@
 .the-sigma-logo {
     display: flex;
 
-    height: var(--logoHeight);
-    
-    filter: invert(var(--logoInvert));
-    opacity: var(--logoOpacity);
+    position: relative;
+    bottom: calc((var(--logoHeight)/40)*-8);
+    height: calc((var(--logoHeight)/40)*48);
 }
 .the-mission-holder {
     display: flex;
@@ -31,5 +30,7 @@
 .the-mission {
     display: flex;
     
+    position: relative;
+    top: calc((var(--logoHeight)/40)*8);
     width: var(--missionWidth);
 }

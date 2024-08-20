@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link id="base-theme" rel="stylesheet" type="text/css" href="styles/ours/shared-theme.css">
-        <link id="page-theme" rel="stylesheet" type="text/css" href="styles/ours/index-theme.css">
-        <link id="color-theme" rel="stylesheet" type="text/css" href="styles/ours/dark-theme.css">
+        <link id="base-theme" rel="stylesheet" type="text/css" href="styles/ours/shared-style.css">
+        <link id="page-theme" rel="stylesheet" type="text/css" href="styles/ours/index-style.css">
+        <link id="color-theme" rel="stylesheet" type="text/css" href="styles/ours/corpo-dark-theme.css">
         <title>Homo</title>
     </head>
     <body>
@@ -14,9 +14,12 @@
             <div class="the-top-holder">
                 <div class="the-top-bar">
                     <div class="the-holder-in-the-top">
-                        <img class="the-top-bar-logo" src="images/HomoDesignTextLogo.png">
+                        <img class="the-top-bar-logo" src="images/ours/uncolored/Homo.png">
                         <flexSpacer style="--size:1;"></flexSpacer>
-                        <div class="the-top-search-bar matter-child"><input class="the-search-box" type="search" placeholder="search"></div>
+                        <div class="the-top-search-bar matter-child">
+                            <input class="the-search-box" type="search" placeholder="Search Homo">
+                            <img class="the-search-icon" src="images/ours/uncolored/SearchIcon.png">
+                        </div>
                         <flexSpacer style="--size:1;"></flexSpacer>
                         <div class="the-top-dropdown matter-child the-hover-set"></div>
                         <flexSpacer style="--size:0.25;"></flexSpacer>
@@ -25,7 +28,7 @@
                 </div>
             </div>
             <div class="the-logo-holder">
-                <img class="the-sigma-logo" src="images/HomoDesignTextLogo.png">
+                <img class="the-sigma-logo" src="images/ours/uncolored/HomoDuo.png">
             </div>
             <div class="the-mission-holder">
                 <div class="the-mission">
@@ -37,7 +40,8 @@
                 <div class="the-bottom-bar">
                     <div class="the-bottom-inner-holder">
                         <label class="the-bottom-theme-switch the-shadow-set">
-                            <input type="checkbox" checked onchange="switchTheme()">
+                            <input type="button" onclick="toggleTheme()">
+                            <img class="the-bottom-theme-icon" src="images/ours/uncolored/DarkIcon.png">
                         </label>
                         <flexSpacer style="--size:1;"></flexSpacer>
                     </div>

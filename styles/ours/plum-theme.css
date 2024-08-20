@@ -16,6 +16,9 @@
     --shadowColor: rgb(40, 32, 48);
 
     /* Logo colors */
-    --logoInvert: 1;
-    --logoOpacity: 0.5;
+    --iconColor: -60deg;
+    --iconSaturate: 20%;
+    --iconBrightness: 60%;
+    --iconOpacity: 1;
+    --iconInvert: 0;
 }

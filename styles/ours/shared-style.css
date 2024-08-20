@@ -42,6 +42,17 @@ body {
     padding: 0px;
     background-color: var(--themeColor1);
 }
+img{
+    display: flex;
+    user-select: none;
+    pointer-events: none;
+
+    position: relative;
+    height: 100%;
+
+    filter: invert(var(--iconInvert)) hue-rotate(var(--iconColor)) saturate(var(--iconSaturate)) brightness(var(--iconBrightness));
+    opacity: var(--iconOpacity);
+}
 
 .the-edge-shadow {
     z-index: 10;
@@ -111,10 +122,7 @@ body {
     display: flex;
 
     position: relative;
-    height: 100%;
-
-    filter: invert(var(--logoInvert));
-    opacity: var(--logoOpacity);
+    height: calc((100%/40)*48);
 }
 .the-top-search-bar {
     display: flex;
@@ -145,6 +153,9 @@ body {
     border-radius: 100px 0px 0px 100px;
     border-width: 0px;
     
+}
+.the-search-icon {
+    display: flex;
 }
 
 .the-top-dropdown {
@@ -212,6 +223,18 @@ body {
 }
 .the-bottom-theme-switch > input {
     visibility: hidden;
+    position: absolute;
+}
+.the-bottom-theme-icon {
+    animation: themeIconSpin 0.08s linear infinite paused;
+    transition: transform 0.8s ease-out;
+}
+.the-bottom-theme-switch:active > .the-bottom-theme-icon {
+    animation-play-state: running;
+    transform: rotate(-360deg);
+}
+@keyframes themeIconSpin {
+    to {rotate: 90deg;}
 }
 
 .the-shadow-set {
