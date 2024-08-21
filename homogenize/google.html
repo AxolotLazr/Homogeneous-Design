@@ -2,11 +2,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link id="base-style" rel="stylesheet" type="text/css" href="../styles/ours/shared-style.css">
     <link id="local-style" rel="stylesheet" type="text/css" href="../styles/ours/homogenize-style.css">
     <link id="color-theme" rel="stylesheet" type="text/css" href="../styles/ours/all-black-theme.css">
     <link id="homogenized-style" rel="stylesheet" type="text/css" href="../styles/theirs/google-style.css">
-    <link id="homogenized-theme" rel="stylesheet" type="text/css" href="../styles/theirs/google-theme.css">
+    <link id="homogenized-theme" rel="stylesheet" type="text/css" href="../styles/theirs/google-shared-theme.css">
+    <link id="homogenized-color-theme" rel="stylesheet" type="text/css" href="../styles/theirs/google-light-theme.css">
+
     <title>Homo - Google</title>
 </head>
 <body>
@@ -15,7 +18,7 @@
         <div class="the-top-holder">
             <div class="the-top-bar">
                 <div class="the-holder-in-the-top">
-                    <img class="the-top-bar-logo" src="../images/ours/uncolored/Homo.png">
+                    <a href="../index.html"><img class="the-top-bar-logo" src="../images/ours/uncolored/Homo.png"></a>
                     <flexSpacer style="--size:1;"></flexSpacer>
                     <div class="the-top-search-bar matter-child">
                         <input class="the-search-box" type="search" placeholder="Search Homo">
@@ -34,9 +37,12 @@
                 <div class="the-viewport-background"></div>
                 <div class="the-viewport-content-holder">
                     <div class="the-viewport-top-holder">
-                        <div><a href="https://mail.google.com/mail/?tab=rm&ogbl">Gmail</a></div>
-                        <div><a href="https://www.google.com/imghp?hl=en&tab=ri&ogbl">Images</a></div>
-                        <div></div>
+                        <div class="the-viewport-top-inner">
+                            <a href="https://mail.google.com/mail/?tab=rm&ogbl">Gmail</a>
+                            <a href="https://www.google.com/imghp?hl=en&tab=ri&ogbl">Images</a>
+                            <div class="the-search-labs-button"></div>
+                            <div class="the-google-apps-button"></div>
+                        </div>
                     </div>
                     <div class="the-viewport-bottom-holder">
                         
@@ -57,7 +63,7 @@
             </div>
         </div>
     </div>
-    <script src="../scripts/homogenize-script.js"></script>
+    <script name="google" class="homogenized-script" src="../scripts/homogenize-script.js"></script>
     <script src="../scripts/shared-script.js"></script>
 </body>
 </html>

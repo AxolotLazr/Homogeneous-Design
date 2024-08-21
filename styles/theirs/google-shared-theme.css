@@ -1,0 +1,7 @@
+:root {
+    --homoTopHeight: calc((64 * min(1920px, 100vw - var(--edgeGutter)*2)) / 1920);
+    --homoTopPadding: calc((8 * min(1920px, 100vw - var(--edgeGutter)*2)) / 1920);
+
+    --HomoFontSize: calc((16 * min(1920px, 100vw - var(--edgeGutter)*2)) / 1920);
+    --HomoFontSizeTop: calc((13 * min(1920px, 100vw - var(--edgeGutter)*2)) / 1920);
+}

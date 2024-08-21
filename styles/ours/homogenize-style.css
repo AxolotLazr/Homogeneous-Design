@@ -4,7 +4,8 @@
     aspect-ratio: 16 / 9;
 
     position: relative;
-    width: calc(1920px/4);
+    width: 1920px;
+    max-width: calc(100vw - var(--edgeGutter)*2);
     margin: var(--edgeGutter);
 
     border-radius: var(--borderRadius);

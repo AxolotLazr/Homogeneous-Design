@@ -1,8 +1,0 @@
-:root {
-    --homoColor1: rgb(255, 255, 255);
-
-    --homoTopHeight: calc(64px / 4);
-
-    --HomoFontSize: calc(16px / 4);
-    --HomoFontSizeTop: calc(13px / 4);
-}

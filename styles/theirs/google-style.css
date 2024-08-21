@@ -20,23 +20,53 @@
 }
 .the-viewport-top-holder {
     display: flex;
-    flex-direction: row;
-    justify-content: end;
+    justify-content: center;
+    align-items: center;
 
     position: relative;
     height: var(--homoTopHeight);
 }
-.the-viewport-top-holder div {
+.the-viewport-top-inner {
     display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
 
-    position: relative;
-    font-size: var(--homoFontSizeTop);
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: var(--homoTopPadding);
 }
 .the-viewport-top-holder a {
     display: flex;
 
     position: relative;
-    font-size: var(--homoFontSizeTop);
+    padding: var(--homoTopPadding);
+
+    font-size: var(--HomoFontSizeTop);
+    text-decoration: none;
+    color: var(--homoTextColor1);
+}
+.the-viewport-top-holder a:hover {
+    text-decoration: underline;
+}
+.the-search-labs-button {
+    display: flex;
+    aspect-ratio: 1/1;
+
+    position: relative;
+    height: 100%;
+    padding: var(--homoTopPadding);
+}
+.the-google-apps-button {
+    display: flex;
+    aspect-ratio: 1/1;
+
+    position: relative;
+    height: 100%;
+    padding: var(--homoTopPadding);
 }
 
 .the-viewport-bottom-holder {
