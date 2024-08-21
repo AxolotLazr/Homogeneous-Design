@@ -1,12 +1,11 @@
-.the-viewport {
+img {
     display: flex;
-    overflow: hidden;
-    aspect-ratio: 16 / 9;
+    user-select: none;
+    pointer-events: none;
 
     position: relative;
-    width: 1920px;
-    max-width: calc(100vw - var(--edgeGutter)*2);
-    margin: var(--edgeGutter);
+    height: 100%;
 
-    border-radius: var(--borderRadius);
+    filter: invert(var(--iconInvert)) hue-rotate(var(--iconColor)) saturate(var(--iconSaturate)) brightness(var(--iconBrightness));
+    opacity: var(--iconOpacity);
 }

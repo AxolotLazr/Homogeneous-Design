@@ -1,6 +1,34 @@
 :root {
-    --homoTopHeight: calc((64 * min(1920px, 100vw - var(--edgeGutter)*2)) / 1920);
-    --homoTopPadding: calc((8 * min(1920px, 100vw - var(--edgeGutter)*2)) / 1920);
+    /* Size variables */
+    --edgeBoxSize: 48px;
+    --topItemHeight: 48px;
+    --topTextHolderHeight: 24px;
+
+    /* Outline variables */
+    --borderWidth: 2px;
+    --borderRadius: 16px;
+
+    /* Gutter variables */
+    --gutterWidth: 4px;
+    --edgeGutter: 12px;
+    --textEdgeGutter: 32px;
+
+    --paddingTop: 8px;
+
+    --hoverRise: 2px;
+    
+    /* Text variables */
+    font-family: Arial, sans-serif;
+    --fontSize: 16px;
+    --fontSizeTop: 13px;
+
+    /* Shadow variables */
+    --shadowBlur: 8px;
+    --shadowWidth: 4px;
+    --shadowDistance: 2px;
+    --shadowRise: 4px;
+    --shadowGrow: 1px;
+
 
     --HomoFontSize: calc((16 * min(1920px, 100vw - var(--edgeGutter)*2)) / 1920);
     --HomoFontSizeTop: calc((13 * min(1920px, 100vw - var(--edgeGutter)*2)) / 1920);

@@ -5,6 +5,7 @@
     --themeColor3: rgb(88, 80, 96);
 
     /* Outline colors */
+    --outlineColor: rgb(96, 88, 104);
     --preHighlightOverlayColor: rgb(244,255,248,0);
     --highlightOverlayColor: rgb(244,255,248,0.3);
 
