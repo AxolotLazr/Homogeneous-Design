@@ -16,8 +16,8 @@
     /* Shadow colors */
     --shadowColor: rgb(12, 12, 16);
 
-    /* Logo colors */
-    --iconColor: -110deg;
+    /* Icon colors */
+    --iconColor: rgb(88, 96, 255);
     --iconSaturate: 50%;
     --iconBrightness: 150%;
     --iconOpacity: 1;

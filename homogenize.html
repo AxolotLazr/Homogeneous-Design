@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link id="base-theme" rel="stylesheet" type="text/css" href="styles/ours/shared-style.css">
-        <link id="page-theme" rel="stylesheet" type="text/css" href="styles/ours/index-style.css">
+        <link id="page-theme" rel="stylesheet" type="text/css" href="styles/ours/homogenize-style.css">
         <link id="color-theme" rel="stylesheet" type="text/css" href="styles/ours/all-black-theme.css">
         <title>Homo</title>
     </head>
@@ -27,9 +27,20 @@
                     </div>
                 </div>
             </div>
+
             <div class="the-middle-holder">
-                <iframe class="the-viewport" src="homogenize/google.html"></iframe>
+                <div class="the-page-title"></div>
+                <div class="the-viewport-holder">
+                    <iframe class="the-viewport" id="the-viewport" src="homogenize/google.html"></iframe>
+                    <div class="the-viewport-option-bar">
+                        <div class="the-viewport-fullscreen-button icon">
+                            <input type="checkbox">
+                        </div>
+                    </div>
+                </div>
+                <div class="the-page-content"></div>
             </div>
+
             <div class="the-bottom-holder">
                 <div class="the-bottom-bar">
                     <div class="the-bottom-inner-holder">
@@ -42,7 +53,7 @@
                 </div>
             </div>
         </div>
-        <script src="scripts/index-script.js"></script>
+        <script src="scripts/homogenize-script.js"></script>
         <script src="scripts/shared-script.js"></script>
     </body>
 </html>
