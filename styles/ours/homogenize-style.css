@@ -1,0 +1,83 @@
+:root {
+    --optionBarSize: 56px;
+}
+.the-middle-holder:has( .the-viewport-fullscreen-button > input:checked) {
+    z-index: 10;
+}
+.the-viewport-holder {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutterWidth);
+    align-items: end;
+    justify-self: center;
+
+    position: relative;
+    height: fit-content;
+    transition: all 0.2s, padding-top 0s ease-out;
+}
+.the-viewport-holder:has( .the-viewport-fullscreen-button > input:checked) {
+    position: fixed;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    margin: var(--edgeGutter);
+}
+.the-viewport {
+    display: flex;
+    aspect-ratio: 16 / 9;
+    flex-grow: 1;
+
+    position: relative;
+    height: 1080px;
+    max-height: calc(min(100vh - (var(--edgeBoxSize)*2 + var(--optionBarSize) + var(--bigGutter) + var(--gutterWidth)), (100vw - var(--edgeGutter)*2)/16*9));
+    box-shadow: 0px 4px var(--shadowBlur) 0px var(--shadowColor);
+
+    border-width: var(--borderWidth);
+    border-radius: var(--borderRadius);
+    border-color: var(--outlineColor);
+    border-style: solid;
+
+    transition: all 0.2s, max-height 0s ease-out;
+}
+.the-viewport-holder:has( .the-viewport-fullscreen-button > input:checked) .the-viewport {
+    max-height: calc(min(100vh - (var(--optionBarSize) + var(--edgeGutter)*2 + var(--gutterWidth)), (100vw - var(--edgeGutter)*2)/16*9));
+}
+.the-viewport:hover {
+    box-shadow: 0px var(--shadowRise) var(--shadowBlur) var(--shadowGrow) var(--shadowColor);
+
+    border-color: var(--highlightOverlayColor);
+}
+.the-viewport-option-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--themeColor2);
+    
+    border-width: var(--borderWidth);
+    border-radius: var(--borderRadius);
+    border-color: var(--outlineColor);
+    border-style: solid;
+}
+.the-viewport-fullscreen-button {
+    height: var(--buttonSize);
+
+    mask-image: url(../../SVGs/ours/fullscreenIcon.svg);
+}
+.the-viewport-fullscreen-button:has(> input:checked) {
+    mask-image: url(../../SVGs/ours/exitFullscreenIcon.svg);
+}
+.the-viewport-fullscreen-button > input {
+    opacity: 0;
+
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+}

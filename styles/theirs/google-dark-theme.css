@@ -1,0 +1,17 @@
+:root {
+    /* Basic colors */
+    --themeColor1: rgb(60, 60, 60);
+
+    /* Outline colors */
+    --preHighlightOverlayColor: rgb(244,255,248,0);
+    --highlightOverlayColor: rgb(244,255,248,0.8);
+
+    /* Text colors */
+    --textColor: rgb(255, 255, 255);
+
+    /* Shadow colors */
+    --shadowColor: rgb(160, 168, 176);
+
+    /* Icon colors */
+    --iconColor: rgb(255, 255, 255)
+}

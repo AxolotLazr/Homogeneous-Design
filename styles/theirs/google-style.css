@@ -1,0 +1,65 @@
+.icon {
+    display: flex;
+    aspect-ratio: 1/1;
+
+    position: relative;
+    background-color: var(--iconColor);
+    mask-size: 100%;
+    mask-repeat: no-repeat;
+    mask-image: url(../../SVGs/ours/defaultIcon.svg);
+}
+
+.the-common-ancestor {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    margin: 0px;
+    background-color: var(--themeColor1);
+}
+.the-top-holder {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+
+    position: relative;
+    height: var(--edgeBoxSize);
+    padding: var(--paddingTop);
+}
+.the-top-holder > * {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+    height: var(--topItemHeight);
+}
+.the-top-text-holder {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+
+    position: relative;
+    padding-right: 12px;
+    height: var(--topTextHolderHeight);
+
+}
+.the-top-text-holder > * {
+    display: flex;
+
+    position: relative;
+    height: fit-content;
+
+    font-size: var(--fontSizeTop);
+    text-decoration: none;
+    color: var(--textColor);
+}
+.the-top-text-holder > *:hover {
+    text-decoration: underline;
+}
