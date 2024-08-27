@@ -4,6 +4,7 @@
     --searchSize: 512px;
     --buttonSize: 48px;
     --buttonSizeWide: 64px;
+    --iconSize: 40px;
 
     /* Outline variables */
     --borderWidth: 2px;
@@ -62,6 +63,7 @@ img{
     aspect-ratio: 1/1;
 
     position: relative;
+    height: var(--iconSize);
     background-color: var(--iconColor);
 
     mask-position: center center;
@@ -172,6 +174,8 @@ img{
 }
 .the-search-icon {
     display: flex;
+
+    mask-image: url(../../SVGs/ours/searchIcon.svg);
 }
 .the-top-dropdown {
     display: flex;
