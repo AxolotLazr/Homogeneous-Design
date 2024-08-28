@@ -17,5 +17,6 @@
     --shadowColor: rgb(12, 12, 16);
 
     /* Icon colors */
-    --iconColor: rgb(88, 96, 255);
+    --iconColor: rgb(72, 88, 255);
+    --logoColor: rgb(72, 88, 255);
 }

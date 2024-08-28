@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link id="base-theme" rel="stylesheet" type="text/css" href="styles/ours/shared-style.css">
+        <link id="page-theme" rel="stylesheet" type="text/css" href="styles/ours/index-style.css">
+        <link id="color-theme" rel="stylesheet" type="text/css" href="styles/ours/all-black-theme.css">
+        <title>Homo</title>
+    </head>
+    <body>
+        <div class="the-baseline">
+            <div class="the-edge-shadow"></div>
+            <div class="the-top-holder edge-box">
+                <div class="the-top-bar">
+                    <div class="the-top-bar-logo icon"></div>
+                    <flexSpacer style="--size:1;"></flexSpacer>
+                    <div class="the-top-bar-search matter-child">
+                        <input class="the-top-bar-search-box" type="search" placeholder="Search Homo">
+                        <div class="the-top-bar-search-icon icon"></div>
+                    </div>
+                    <flexSpacer style="--size:1;"></flexSpacer>
+                    <div class="the-top-bar-dropdown matter-child the-hover-set"></div>
+                    <flexSpacer style="--size:0.25;"></flexSpacer>
+                    <div class="the-top-bar-options matter-child the-hover-set"></div>
+                </div>
+            </div>
+
+            <flexSpacer style="--size:1;"></flexSpacer>
+
+            <div class="the-bottom-holder edge-box">
+                <div class="the-bottom-bar">
+                    <label class="the-bottom-theme-switch the-shadow-set">
+                        <input type="button" onclick="toggleTheme()">
+                        <div class="the-bottom-theme-icon icon"></div>
+                    </label>
+                    <flexSpacer style="--size:1;"></flexSpacer>
+                </div>
+            </div>
+        </div>
+
+        <div class="the-actual-page">
+            <div class="the-logo-holder">
+                <div class="the-sigma-logo icon"></div>
+            </div>
+            <div class="the-mission-holder">
+                <div class="the-mission">
+                    Homogeneous Design is an open-source collection of styles from companies, websites, apps, and games.
+                    Curated with the purpose of allowing developers to design things that integrate seemlessly with their desired platform.
+                </div>
+            </div>
+        </div>
+
+        <script src="scripts/index-script.js"></script>
+        <script src="scripts/shared-script.js"></script>
+    </body>
+</html>

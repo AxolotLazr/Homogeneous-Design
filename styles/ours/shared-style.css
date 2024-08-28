@@ -47,17 +47,6 @@ body {
     padding: 0px;
     background-color: var(--themeColor1);
 }
-img{
-    display: flex;
-    user-select: none;
-    pointer-events: none;
-
-    position: relative;
-    height: 100%;
-
-    filter: invert(var(--iconInvert)) hue-rotate(var(--iconColor)) saturate(var(--iconSaturate)) brightness(var(--iconBrightness));
-    opacity: var(--iconOpacity);
-}
 .icon {
     display: flex;
     aspect-ratio: 1/1;
@@ -69,6 +58,12 @@ img{
     mask-position: center center;
     mask-image: url(../../SVGs/ours/defaultIcon.svg);
     mask-size: 100%;
+}
+flexSpacer {
+    display: flex;
+    flex-grow: var(--size);
+
+    position: relative;
 }
 
 .the-edge-shadow {
@@ -83,7 +78,7 @@ img{
     box-shadow: inset 0px 0px var(--edgeGutter) var(--gutterWidth) var(--shadowColor);
 }
 
-.the-common-ancestor {
+.the-baseline {
     display: flex;
     flex-direction: column;
 
@@ -93,207 +88,36 @@ img{
     top: 0%;
     bottom: 0%;
 }
-.the-top-holder {
-    z-index: 1;
+
+.edge-holder {
+    z-index: 10;
     display: flex;
 
+    position: relative;
     left: 0%;
     right: 0%;
-    top: 0%;
     height: var(--edgeBoxSize);
 }
-.the-top-bar {
-    position: fixed;
-    left: 0%;
-    right: 0%;
-    top: 0%;
-    height: var(--edgeBoxSize);
-    background-color: var(--themeColor2);
-    box-shadow: 0px 4px var(--shadowBlur) 0px var(--shadowColor), inset 0px 0px 0px var(--borderWidth) var(--preHighlightOverlayColor);
-    transition-duration: 0.2s;
 
-    border-radius: 0px 0px var(--borderRadius) var(--borderRadius);
-    outline-style: solid;
-    outline-width: var(--borderWidth);
-    outline-color: var(--preHighlightOverlayColor);
-}
-.the-top-bar:hover {
-    box-shadow: 0px var(--shadowRise) var(--shadowBlur) var(--shadowGrow) var(--shadowColor);
-}
-.the-top-bar:hover:not(:has(.matter-child:hover)) {
-    box-shadow: 0px 4px 8px calc(var(--hoverRise)/2) var(--shadowColor), inset 0px 0px 0px var(--borderWidth) var(--highlightOverlayColor);
-}
-.the-holder-in-the-top {
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
-    margin: var(--edgeGutter);
-    margin-bottom: var(--gutterWidth);
-}
-.the-top-bar-logo {
-    display: flex;
-
-    position: relative;
-    height: calc((100%/40)*48);
-}
-.the-top-search-bar {
-    display: flex;
-    flex-direction: row;
-
-    position: relative;
-    width: var(--searchSize);
-    margin: var(--gutterWidth);
-    background-color: var(--themeColor3);
-
-    border-radius: 100px;
-    
-    align-items: center;
-    color: var(--textColorLight);
-}
-.the-top-search-bar:hover {
-    box-shadow: inset 0px 0px 0px var(--borderWidth) var(--highlightOverlayColor);
-}
-.the-search-box {
-    display: flex;
-    flex-grow: 1;
-
-    position: relative;
-    left: var(--gutterWidth);
-    height: calc(100% - var(--gutterWidth)*2);
-    background-color: rgb(0,0,0,0);
-
-    border-radius: 100px 0px 0px 100px;
-    border-width: 0px;
-    
-}
-.the-search-icon {
-    display: flex;
-
-    mask-image: url(../../SVGs/ours/searchIcon.svg);
-}
-.the-top-dropdown {
-    display: flex;
-
-    position: relative;
-    width: calc(2*(var(--edgeBoxSize) - (var(--edgeGutter) + var(--gutterWidth)*3)));
-    margin: var(--gutterWidth);
-    background-color: var(--themeColor3);
-
-    border-radius: var(--borderRadius);
-}
-.the-top-dropdown:hover {
-    box-shadow: inset 0px 0px 0px var(--borderWidth) var(--highlightOverlayColor);
-}
-.the-top-options {
-    display: flex;
-
-    position: relative;
-    width: calc(var(--edgeBoxSize) - (var(--edgeGutter) + var(--gutterWidth)*3));
-    margin: var(--gutterWidth);
-    background-color: var(--themeColor3);
-
-    border-radius: var(--borderRadius);
-}
-
-.the-middle-holder {
+.the-actual-page {
     z-index: 0;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    align-items: center;
-    justify-content: center;
-}
 
-.the-bottom-holder {
-    z-index: 1;
-    display: flex;
-
-    left: 0%;
-    right: 0%;
-    bottom: 0%;
-    height: var(--edgeBoxSize);
-}
-.the-bottom-bar {
     position: fixed;
     left: 0%;
     right: 0%;
+    top: 0%;
     bottom: 0%;
-    height: var(--edgeBoxSize);
 }
-.the-bottom-inner-holder {
+
+.edge-box {
+    z-index: 10;
     display: flex;
     flex-direction: row;
-    flex-grow: 1;
 
     position: absolute;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
-    margin: var(--edgeGutter);
-    margin-top: var(--gutterWidth);
-}
-.the-bottom-theme-switch {
-    display: flex;
-
-    position: relative;
-    bottom: 0px;
-    width: calc(var(--edgeBoxSize) - (var(--edgeGutter) + var(--gutterWidth)*3));
-    margin: var(--gutterWidth);
-    background-color: var(--themeColor3);
-
-    border-radius: 50%;
-}
-.the-bottom-theme-switch > input {
-    visibility: hidden;
-    position: absolute;
-}
-.the-bottom-theme-icon {
-    animation: themeIconSpin 0.08s linear infinite paused;
-    transition: transform 0.8s ease-out;
-}
-.the-bottom-theme-switch:active > .the-bottom-theme-icon {
-    animation-play-state: running;
-    transform: rotate(-360deg);
-}
-@keyframes themeIconSpin {
-    to {rotate: 90deg;}
-}
-
-.the-shadow-set {
-    bottom: 0px;
-    box-shadow: 0px var(--shadowDistance) var(--shadowBlur) var(--shadowColor);
-}
-.the-shadow-set:hover {
-    cursor: pointer;
-    bottom: var(--hoverRise);
-    box-shadow: 0px var(--shadowRise) var(--shadowBlur) var(--shadowGrow) var(--shadowColor), inset 0px 0px 0px var(--borderWidth) var(--highlightOverlayColor);
-}
-.the-shadow-set:active {
-    bottom: 0px;
-    box-shadow: 0px var(--shadowDistance) var(--shadowBlur) var(--shadowColor), inset 0px 0px 0px var(--borderWidth) var(--highlightOverlayColor);
-}
-
-.the-hover-set {
-    bottom: 0px;
-}
-.the-hover-set:hover {
-    cursor: pointer;
-    bottom: var(--hoverRise);
-    box-shadow: inset 0px 0px 0px var(--borderWidth) var(--highlightOverlayColor);
-}
-.the-hover-set:active {
-    bottom: 0px;
-    box-shadow: inset 0px 0px 0px var(--borderWidth) var(--highlightOverlayColor);
-}
-
-flexSpacer {
-    display: flex;
-    flex-grow: var(--size);
+    left: 0%;
+    right: 0%;
+    height: var(--edgeBoxSize);
 }
