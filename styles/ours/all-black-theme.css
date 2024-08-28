@@ -16,9 +16,5 @@
     --shadowColor: rgb(0, 0, 0);
 
     /* Logo colors */
-    --iconColor: -0deg;
-    --iconSaturate: 0%;
-    --iconBrightness: 0%;
-    --iconOpacity: 1;
-    --iconInvert: 0;
+    --iconColor: rgb(0, 0, 0);
 }

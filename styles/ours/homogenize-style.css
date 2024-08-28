@@ -1,9 +1,11 @@
 :root {
     --optionBarSize: 56px;
 }
+
 .the-middle-holder:has( .the-viewport-fullscreen-button > input:checked) {
     z-index: 10;
 }
+
 .the-viewport-holder {
     display: flex;
     flex-direction: column;

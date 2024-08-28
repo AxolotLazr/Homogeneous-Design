@@ -6,17 +6,15 @@
 
     /* Outline colors */
     --outlineColor: rgb(40, 40, 44);
-    --preHighlightOverlayColor: rgb(0, 0, 0, 0);
-    --highlightOverlayColor: rgb(96, 112, 255, 1);
+    --glowColor: rgb(96, 112, 255, 1);
 
     /* Text colors */
     --textColor: rgb(112, 128, 192);
-    --textColorLight: rgb(160, 176, 200);
 
     /* Shadow colors */
     --shadowColor: rgb(12, 12, 16);
 
     /* Icon colors */
-    --iconColor: rgb(72, 88, 255);
-    --logoColor: rgb(72, 88, 255);
+    --iconColor: rgb(88, 96, 255);
+    --logoColor: rgb(88, 96, 255);
 }
