@@ -121,3 +121,18 @@ flexSpacer {
     right: 0%;
     height: var(--edgeBoxSize);
 }
+
+.the-top-bar {
+    background-color: var(--themeColor2);
+    border-radius: 0px 0px var(--borderRadius) var(--borderRadius);
+}
+
+.outline {
+    border-style: solid;
+    border-width: var(--borderWidth);
+    border-color: var(--outlineColor);
+}
+
+.shadow {
+    box-shadow: 0px var(--shadowDistance) var(--shadowBlur) var(--shadowWidth) var(--shadowColor);
+}
