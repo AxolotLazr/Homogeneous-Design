@@ -12,31 +12,31 @@
         <div class="the-baseline">
             <div class="the-edge-shadow"></div>
             <div class="the-top-holder edge-holder">
-                <div class="the-top-bar edge-box shadow outline">
-                    <div class="the-top-bar-logo icon"></div>
+                <div class="the-top-bar edge-box shadow outline glow horizontal-holder">
+                    <div id="the-top-bar-logo" class="icon" style="mask-image: url(SVGs/ours/logo.svg), url(SVGs/ours/defaultIcon.svg);"></div>
 
                     <flexSpacer style="--size:1;"></flexSpacer>
 
-                    <div class="the-top-bar-search matter-child">
-                        <input class="the-top-bar-search-box" type="search" placeholder="Search Homo">
-                        <div class="the-top-bar-search-icon icon" style="mask-image: url(SVGs/ours/searchIcon.svg);"></div>
+                    <div id="the-search-holder" class="horizontal-holder outline horizontal-action-box glow matter-child">
+                        <input id="the-search-input" type="search" placeholder="Search Homo">
+                        <div id="the-search-icon" class="icon" style="mask-image: url(SVGs/ours/searchIcon.svg);"></div>
                     </div>
 
                     <flexSpacer style="--size:1;"></flexSpacer>
 
-                    <div class="the-top-bar-dropdown matter-child the-hover-set"></div>
+                    <div id="the-dropdown" class="outline button horizontal-action-box glow matter-child"></div>
                     <flexSpacer style="--size:0.25;"></flexSpacer>
-                    <div class="the-top-bar-options matter-child the-hover-set"></div>
+                    <div id="the-options" class="outline button horizontal-action-box glow matter-child"></div>
                 </div>
             </div>
 
             <flexSpacer style="--size:1;"></flexSpacer>
 
-            <div class="the-bottom-holder edge-holder">
-                <div class="the-bottom-bar edge-box">
-                    <label class="the-bottom-theme-switch the-shadow-set">
+            <div id="the-bottom-holder" class="edge-holder">
+                <div id="the-bottom-bar" class="edge-box horizontal-holder">
+                    <label id="the-theme-switch" class="shadow outline button glow">
                         <input type="button" onclick="toggleTheme()">
-                        <div class="the-bottom-theme-icon icon"></div>
+                        <div id="the-theme-icon" class="icon" style="mask-image: url(SVGs/ours/themeDark.svg)"></div>
                     </label>
                     <flexSpacer style="--size:1;"></flexSpacer>
                 </div>
@@ -45,11 +45,11 @@
 
         <div class="the-actual-page">
             <div class="the-logo-holder">
-                <div class="the-sigma-logo icon"></div>
+                <div class="the-sigma-logo icon" style="mask-image: url(SVGs/ours/logoDuo.svg), url(SVGs/ours/defaultIcon.svg);"></div>
             </div>
             <div class="the-mission-holder">
                 <div class="the-mission">
-                    Homogeneous Design is an open-source collection of styles from companies, websites, apps, and games.
+                    Homogenous Design is an open-source collection of styles from companies, websites, apps, and games.
                     Curated with the purpose of allowing developers to design things that integrate seemlessly with their desired platform.
                 </div>
             </div>

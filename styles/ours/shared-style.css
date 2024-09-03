@@ -2,7 +2,7 @@
     /* Size variables */
     --edgeBoxSize: 64px;
     --searchSize: 512px;
-    --buttonSize: 48px;
+    --buttonSize: 40px;
     --buttonSizeWide: 64px;
     --iconSize: 40px;
 
@@ -28,7 +28,7 @@
     --shadowWidth: 4px;
     --shadowDistance: 2px;
     --shadowRise: 4px;
-    --shadowGrow: 1px;
+    --shadowGrow: 4px;
 }
 
 * {
@@ -55,15 +55,40 @@ body {
     height: var(--iconSize);
     background-color: var(--iconColor);
 
+    margin: var(--gutterWidth);
+
     mask-position: center center;
     mask-image: url(../../SVGs/ours/defaultIcon.svg);
     mask-size: 100%;
+}
+.button {
+    display: flex;
+    aspect-ratio: 1/1;
+
+    position: relative;
+    height: var(--buttonSize);
+    background-color: var(--themeColor2);
+
+    margin: var(--gutterWidth);
+
+    border-radius: calc(var(--buttonSize)/2  + var(--borderWidth));
 }
 flexSpacer {
     display: flex;
     flex-grow: var(--size);
 
     position: relative;
+}
+.outline {
+    border-style: solid;
+    border-width: var(--borderWidth);
+    border-color: var(--outlineColor);
+}
+.glow:hover:not(:has(> .matter-child:hover)) {
+    border-color: var(--glowGolor);
+}
+.shadow {
+    box-shadow: 0px var(--shadowDistance) var(--shadowBlur) var(--shadowWidth) var(--shadowColor);
 }
 
 .the-edge-shadow {
@@ -89,16 +114,6 @@ flexSpacer {
     bottom: 0%;
 }
 
-.edge-holder {
-    z-index: 10;
-    display: flex;
-
-    position: relative;
-    left: 0%;
-    right: 0%;
-    height: var(--edgeBoxSize);
-}
-
 .the-actual-page {
     z-index: 0;
     display: flex;
@@ -111,15 +126,42 @@ flexSpacer {
     bottom: 0%;
 }
 
+.edge-holder {
+    z-index: 10;
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    left: 0%;
+    right: 0%;
+    height: var(--edgeBoxSize);
+}
 .edge-box {
     z-index: 10;
     display: flex;
     flex-direction: row;
+    align-items: center;
 
     position: absolute;
     left: 0%;
     right: 0%;
-    height: var(--edgeBoxSize);
+    height: calc(var(--edgeBoxSize) - var(--gutterWidth));
+    
+    padding: var(--gutterWidth);
+    padding-bottom: 0px;
+}
+.horizontal-holder {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.horizontal-action-box {
+    height: var(--buttonSize);
+    background-color: var(--themeColor3);
+
+    margin: var(--gutterWidth);
+
+    border-radius: calc(var(--buttonSize)/2 + var(--borderWidth));
 }
 
 .the-top-bar {
@@ -127,12 +169,61 @@ flexSpacer {
     border-radius: 0px 0px var(--borderRadius) var(--borderRadius);
 }
 
-.outline {
-    border-style: solid;
-    border-width: var(--borderWidth);
-    border-color: var(--outlineColor);
+#the-top-bar-logo {
+    position: relative;
+    height: var(--edgeBoxSize);
+
+    margin: 0px;
 }
 
-.shadow {
-    box-shadow: 0px var(--shadowDistance) var(--shadowBlur) var(--shadowWidth) var(--shadowColor);
+#the-search-input {
+    display: flex;
+    flex-grow: 1;
+
+    position: relative;
+    height: var(--iconSize);
+    background-color: rgb(0,0,0,0);
+
+    margin: var(--gutterWidth);
+    margin-right: 0px;
+
+    border-style: none;
+    border-radius: calc(var(--iconSize)/2) 0px 0px calc(var(--iconSize)/2);
+}
+#the-search-icon {
+    height: var(--buttonSize);
+
+    margin: 0px;
+}
+#the-theme-switch {
+    top: 0px;
+    margin: calc(var(--gutterWidth)*2);
+
+    transition: all 0.2s;
+}
+#the-theme-switch:hover:not(:active) {
+    top: calc(var(--shadowRise)*-1);
+    box-shadow: 0px var(--shadowRise) calc(var(--shadowBlur) + var(--shadowGrow)) var(--shadowWidth) var(--shadowColor);
+}
+#the-theme-switch > input {
+    opacity: 0;
+
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+}
+#the-theme-icon {
+    margin: 0px;
+
+    animation: rotate 0.3s linear infinite paused;
+    transition: 0.2s ease-out;
+}
+#the-theme-icon:active {
+    animation-play-state: running;
+    transform: rotate(-90deg);
+}
+@keyframes rotate {
+    to {rotate: 360deg}
 }
