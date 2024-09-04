@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <style>
+            html {
+                background-color: rgb(0,0,0);
+            }
+        </style>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link id="base-theme" rel="stylesheet" type="text/css" href="styles/ours/shared-style.css">
-        <link id="page-theme" rel="stylesheet" type="text/css" href="styles/ours/index-style.css">
         <link id="color-theme" rel="stylesheet" type="text/css" href="styles/ours/all-black-theme.css">
+        <link id="base-theme" rel="stylesheet" type="text/css" href="styles/ours/shared-style.css">
         <title>Homo</title>
     </head>
     <body>
@@ -15,17 +19,17 @@
                 <div class="the-top-bar edge-box top shadow outline glow horizontal-holder">
                     <div id="the-top-bar-logo" class="logo" style="mask-image: url(SVGs/ours/logo.svg);"></div>
 
-                    <flexSpacer style="--size:1;"></flexSpacer>
+                    <flexSpacer style="--size:0.5;"></flexSpacer>
 
                     <div id="the-search-holder" class="horizontal-holder outline horizontal-action-box glow matter-child">
-                        <input id="the-search-input" type="search" placeholder="Search Homo">
+                        <input id="the-search-input" type="text" placeholder="Search Homo">
                         <div id="the-search-icon" class="icon" style="mask-image: url(SVGs/ours/search.svg);"></div>
                     </div>
 
                     <flexSpacer style="--size:1;"></flexSpacer>
 
                     <div id="the-dropdown" class="outline button horizontal-action-box glow matter-child"></div>
-                    <flexSpacer style="--size:0.25;"></flexSpacer>
+                    <flexSpacer style="--size:0.25; max-width:var(--buttonSize);"></flexSpacer>
                     <div id="the-options" class="outline button horizontal-action-box glow matter-child"></div>
                 </div>
             </div>
@@ -42,17 +46,24 @@
                 </div>
             </div>
         </div>
-
-        <div class="the-actual-page">
-            <div class="the-logo-holder">
-                <div class="the-sigma-logo logo" style="mask-image: url(SVGs/ours/logoDuo.svg);"></div>
-            </div>
-            <div class="the-mission-holder">
-                <div class="the-mission">
-                    Homogenous Design is an open-source collection of styles from companies, websites, apps, and games.
-                    Curated with the purpose of allowing developers to design things that integrate seemlessly with their desired platform.
+        <div id="the-main-area">
+            <divSpacer style="--size:var(--edgeBoxSize);"></divSpacer>
+            <!-- Put the link for your pages unique stylesheet here -->
+            <link id="page-theme" rel="stylesheet" type="text/css" href="styles/ours/index-style.css">
+            <div id="the-actual-page">
+                <!-- The actual page you are making goes in here -->
+                <!-- Everything inside this div is meant as demonstration and can be deleted -->
+                <div id="the-logo-holder">
+                    <div id="the-sigma-logo" class="logo" style="mask-image: url(SVGs/ours/logoDuo.svg);"></div>
+                </div>
+                <div id="the-mission-holder">
+                    <div id="the-mission" class="text-box glow">
+                        Homogenous Design is an open-source collection of styles from companies, websites, apps, and games,
+                        curated with the purpose of allowing developers to design things that integrate seemlessly with their desired platform.
+                    </div>
                 </div>
             </div>
+            <divSpacer style="--size:var(--edgeBoxSize);"></divSpacer>
         </div>
 
         <script src="scripts/index-script.js"></script>

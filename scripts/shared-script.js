@@ -1,6 +1,6 @@
 let ColorTheme = false;
 let HotTheme1 = 'corpo-dark';
-let HotTheme2 = 'plum';
+let HotTheme2 = 'light';
 let SetTheme = '';
 
 updateTheme();

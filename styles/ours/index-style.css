@@ -3,31 +3,31 @@
 
     --missionWidth: calc(128px*5);
 }
-.the-logo-holder {
+#the-logo-holder {
     display: flex;
-    flex: 1;
+    flex-grow: 1;
 
-    width: 100%;
+    position: relative;
 
     align-items: end;
     justify-content: center;
 }
-.the-sigma-logo {
+#the-sigma-logo {
     display: flex;
 
     position: relative;
     bottom: calc((var(--logoHeight)/40)*-8);
     height: calc((var(--logoHeight)/40)*48);
 }
-.the-mission-holder {
+#the-mission-holder {
     display: flex;
     flex-direction: row;
-    flex: 1;
+    flex-grow: 1;
 
     justify-content: center;
     text-align: center;
 }
-.the-mission {
+#the-mission {
     display: flex;
     
     position: relative;
