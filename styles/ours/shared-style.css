@@ -13,6 +13,9 @@
 
     /* Gutter variables */
     --gutterWidth: 4px;
+    --gutterWidth2: calc(var(--gutterWidth)*2);
+    --gutterWidth3: calc(var(--gutterWidth)*3);
+    
     --edgeGutter: 12px;
     --textEdgeGutter: 32px;
     --bigGutter: 64px;
@@ -20,8 +23,10 @@
     --hoverRise: 2px;
     
     /* Text variables */
+    --textSize: 24px;
+    --textSizeSmall: 16px;
     font-family: Arial, sans-serif;
-    font-size: 24px;
+    font-size: var(--textSize);
 
     /* Shadow variables */
     --shadowBlur: 8px;
@@ -58,7 +63,24 @@ body {
     margin: var(--gutterWidth);
 
     mask-position: center center;
+    mask-repeat: no-repeat;
     mask-image: url(../../SVGs/ours/defaultIcon.svg);
+    mask-size: 100%;
+}
+.logo {
+    display: flex;
+    aspect-ratio: 8/3;
+
+    position: relative;
+    width: auto;
+    height: var(--iconSize);
+    background-color: var(--logoColor);
+
+    margin: var(--gutterWidth);
+
+    mask-position: center center;
+    mask-image: url(../../SVGs/ours/default.svg);
+    mask-repeat: no-repeat;
     mask-size: 100%;
 }
 .button {
@@ -142,14 +164,23 @@ flexSpacer {
     flex-direction: row;
     align-items: center;
 
-    position: absolute;
-    left: 0%;
-    right: 0%;
+    position: relative;
+    width: 100%;
     height: calc(var(--edgeBoxSize) - var(--gutterWidth));
     
     padding: var(--gutterWidth);
-    padding-bottom: 0px;
 }
+.edge-box.top {
+    background-color: var(--themeColor2);
+
+    padding-bottom: 0px;
+
+    border-radius: 0px 0px var(--borderRadius) var(--borderRadius);
+}
+.edge-box.bottom {
+    padding-top: 0px;
+}
+
 .horizontal-holder {
     display: flex;
     flex-direction: row;
@@ -164,31 +195,28 @@ flexSpacer {
     border-radius: calc(var(--buttonSize)/2 + var(--borderWidth));
 }
 
-.the-top-bar {
-    background-color: var(--themeColor2);
-    border-radius: 0px 0px var(--borderRadius) var(--borderRadius);
-}
-
 #the-top-bar-logo {
     position: relative;
-    height: var(--edgeBoxSize);
+    height: var(--buttonSize);
 
-    margin: 0px;
+    margin: var(--gutterWidth);
 }
 
 #the-search-input {
     display: flex;
-    flex-grow: 1;
+
+    font-size: var(--textSizeSmall);
 
     position: relative;
-    height: var(--iconSize);
     background-color: rgb(0,0,0,0);
 
-    margin: var(--gutterWidth);
-    margin-right: 0px;
+    margin: var(--gutterWidth3);
 
     border-style: none;
     border-radius: calc(var(--iconSize)/2) 0px 0px calc(var(--iconSize)/2);
+}
+#the-search-input {
+    outline: none;
 }
 #the-search-icon {
     height: var(--buttonSize);

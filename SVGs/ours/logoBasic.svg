@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="128"
+   height="48"
+   viewBox="0 0 128 48"
+   version="1.1"
+   id="svg1"
+   inkscape:export-filename="..\Documents\GitHub\Homogenous-Design\SVGs\ours\logoBasic.svg"
+   inkscape:export-xdpi="768"
+   inkscape:export-ydpi="768"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="HomoDesignLogo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     showguides="true"
+     inkscape:zoom="16"
+     inkscape:cx="59.21875"
+     inkscape:cy="23.46875"
+     inkscape:window-width="3440"
+     inkscape:window-height="1369"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <sodipodi:guide
+       position="116.11125,78.357"
+       orientation="0,-1"
+       id="guide1"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="color:#000000;-inkscape-font-specification:sans-serif;mix-blend-mode:normal;fill:#ffffff;stroke:#ffffff;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:32.1279;stroke-opacity:1;paint-order:markers fill stroke"
+       d="M 26.13437,38.468046 H 22.286596 V 24.301241 H 7.847727 V 38.468046 H 3.999953 V 9.532008 h 3.847774 v 11.34899 H 22.286596 V 9.532008 H 26.13437 Z M 55.478505,12.855085 q 1.768422,1.943321 2.701215,4.761135 0.952227,2.817814 0.952227,6.393523 0,3.57571 -0.97166,6.412957 -0.952227,2.817814 -2.681782,4.702835 -1.787854,1.962753 -4.236438,2.953847 -2.42915,0.991093 -5.557896,0.991093 -3.051013,0 -5.557896,-1.010526 -2.48745,-1.010527 -4.236438,-2.934414 -1.748988,-1.923887 -2.701215,-4.722268 -0.932794,-2.798381 -0.932794,-6.393524 0,-3.536842 0.932794,-6.335224 0.932794,-2.817814 2.720648,-4.819434 1.710122,-1.904454 4.236439,-2.91498 2.545749,-1.010527 5.538462,-1.010527 3.109313,0 5.577329,1.02996 2.48745,1.010527 4.217005,2.895547 z m -0.349798,11.154658 q 0,-5.635628 -2.526316,-8.686641 -2.526316,-3.070446 -6.898787,-3.070446 -4.411336,0 -6.937653,3.070446 -2.506883,3.051013 -2.506883,8.686641 0,5.693929 2.565183,8.725508 2.565183,3.012147 6.879353,3.012147 4.314171,0 6.859921,-3.012147 2.565182,-3.031579 2.565182,-8.725508 z M 91.002399,38.468046 H 87.154625 V 13.535247 L 79.10928,30.500433 H 76.816162 L 68.829116,13.535247 V 38.468046 H 65.233973 V 9.532008 h 5.246965 l 7.714981,16.110124 7.46235,-16.110124 h 5.34413 z M 120.34653,12.855085 q 1.76843,1.943321 2.70122,4.761135 0.95223,2.817814 0.95223,6.393523 0,3.57571 -0.97166,6.412957 -0.95223,2.817814 -2.68179,4.702835 -1.78785,1.962753 -4.23643,2.953847 -2.42915,0.991093 -5.5579,0.991093 -3.05101,0 -5.5579,-1.010526 -2.48745,-1.010527 -4.23643,-2.934414 -1.748992,-1.923887 -2.701219,-4.722268 -0.932794,-2.798381 -0.932794,-6.393524 0,-3.536842 0.932794,-6.335224 0.932794,-2.817814 2.720649,-4.819434 1.71012,-1.904454 4.23644,-2.91498 2.54575,-1.010527 5.53846,-1.010527 3.10931,0 5.57733,1.02996 2.48745,1.010527 4.217,2.895547 z m -0.34979,11.154658 q 0,-5.635628 -2.52632,-8.686641 -2.52632,-3.070446 -6.89879,-3.070446 -4.41133,0 -6.93765,3.070446 -2.50688,3.051013 -2.50688,8.686641 0,5.693929 2.56518,8.725508 2.56518,3.012147 6.87935,3.012147 4.31417,0 6.85992,-3.012147 2.56519,-3.031579 2.56519,-8.725508 z"
+       id="path8" />
+  </g>
+</svg>
