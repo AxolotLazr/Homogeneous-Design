@@ -5,6 +5,12 @@
     --buttonSize: 40px;
     --buttonSizeWide: 64px;
     --iconSize: 40px;
+    --logoSize: 160px;
+
+    --maxWidthSmall: 896px;
+    --maxWidth: 1024px;
+    --maxWidthBig: 1280px;
+    --maxWidthBigger: 1580px;
 
     /* Outline variables */
     --borderWidth: 2px;
@@ -43,14 +49,17 @@
 }
 
 body {
+    overflow: hidden;
+
     position: absolute;
     left: 0%;
     right: 0%;
     top: 0%;
     bottom: 0%;
+    background-image: linear-gradient(180deg, var(--themeColor0), var(--shadowColor));
+
     margin: 0px;
     padding: 0px;
-    background-color: var(--themeColor1);
 }
 .icon {
     display: flex;
@@ -84,6 +93,8 @@ body {
     mask-size: 100%;
 }
 .button {
+    cursor: pointer;
+
     display: flex;
     aspect-ratio: 1/1;
 
@@ -96,15 +107,32 @@ body {
     border-radius: calc(var(--buttonSize)/2  + var(--borderWidth));
 }
 .text-box {
+    cursor: text;
+    user-select: none;
+
     color: var(--textColor);
     font-size: var(--textSize);
 
+    max-width: var(--maxWidthSmall);
+
     padding: var(--gutterWidth);
+    margin: var(--edgeGutter);
 
     border-style: solid;
     border-width: var(--borderWidth);
     border-radius: var(--borderRadius);
     border-color: rgb(0,0,0,0);
+}
+.flex {
+    display: flex;
+
+    position: relative;
+}
+.flex.vertical {
+    flex-direction: column;
+}
+.flex.horizontal {
+    flex-direction: row;
 }
 flexSpacer {
     display: flex;
@@ -113,7 +141,6 @@ flexSpacer {
     position: relative;
 }
 divSpacer {
-    display: block;
     aspect-ratio: 1;
 
     position: relative;
@@ -131,19 +158,7 @@ divSpacer {
     box-shadow: 0px var(--shadowDistance) var(--shadowBlur) var(--shadowWidth) var(--shadowColor);
 }
 
-.the-edge-shadow {
-    z-index: 100;
-    pointer-events: none;
-
-    position: fixed;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
-    box-shadow: inset 0px 0px var(--edgeGutter) var(--gutterWidth) var(--shadowColor);
-}
-
-.the-baseline {
+#the-baseline {
     display: flex;
     flex-direction: column;
 
@@ -158,6 +173,7 @@ divSpacer {
     z-index: 10;
     display: flex;
     align-items: center;
+    justify-content: center;
 
     position: relative;
     left: 0%;
@@ -172,11 +188,18 @@ divSpacer {
 
     position: relative;
     width: 100%;
+    max-width: var(--maxWidthBig);
     height: calc(var(--edgeBoxSize) - var(--gutterWidth));
     
     padding: var(--gutterWidth);
 }
 .edge-box.top {
+    flex-wrap: wrap;
+    align-self: start;
+
+    position: relative;
+    min-height: var(--edgeBoxSize);
+    height: fit-content;
     background-color: var(--themeColor2);
 
     padding-bottom: 0px;
@@ -199,6 +222,18 @@ divSpacer {
     margin: var(--gutterWidth);
 
     border-radius: calc(var(--buttonSize)/2 + var(--borderWidth));
+}
+
+#the-edge-shadow {
+    z-index: 100;
+    pointer-events: none;
+
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    box-shadow: inset 0px 0px var(--edgeGutter) var(--gutterWidth) var(--shadowColor);
 }
 
 #the-top-bar-logo {
@@ -262,11 +297,24 @@ divSpacer {
     to {rotate: 360deg}
 }
 
-#the-actual-page {
+#the-main-area {
     z-index: 0;
-    display: block;
+    display: flex;
+    flex-direction: column;
 
     position: relative;
+    left: calc(50% - (min(100vw, var(--maxWidthBig)))/2);
     width: 100vw;
+    max-width: var(--maxWidthBig);
+    height: 100vh;
+    background-image: linear-gradient(180deg, var(--themeColor1), var(--themeColor0));
+
+    box-shadow: 0px 0px var(--edgeGutter) var(--gutterWidth) var(--shadowColor);
+
+    transition: width 0s, left 0s;
+}
+#the-actual-page {
+    position: relative;
+    width: 100%;
     height: calc(100vh - var(--edgeBoxSize)*2);
 }

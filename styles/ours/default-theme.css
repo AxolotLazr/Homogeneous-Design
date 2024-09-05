@@ -1,20 +1,21 @@
 :root {
     /* Basic colors */
-    --themeColor1: rgb(255, 0, 0);
-    --themeColor2: rgb(0, 0, 255);
-    --themeColor3: rgb(128, 0, 255);
+    --themeColor0: rgb(0, 0, 0);
+    --themeColor1: rgb(0, 0, 0);
+    --themeColor2: rgb(0, 0, 0);
+    --themeColor3: rgb(0, 0, 0);
 
     /* Outline colors */
-    --outlineColor: rgb(255, 255, 255);
-    --glowColor: rgb(0, 255, 255);
+    --outlineColor: rgb(0, 0, 0, 0);
+    --glowColor: rgb(0, 0, 0, 1);
 
     /* Text colors */
-    --textColor: rgb(255, 255, 0);
+    --textColor: rgb(0, 0, 0);
 
     /* Shadow colors */
     --shadowColor: rgb(0, 0, 0);
 
     /* Icon colors */
-    --iconColor: rgb(0, 255, 0);
-    --logoColor: rgb(255, 0, 255);
+    --iconColor: rgb(0, 0, 0);
+    --logoColor: rgb(0, 0, 0);
 }

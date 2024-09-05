@@ -1,5 +1,6 @@
 :root {
     /* Basic colors */
+    --themeColor0: rgb(14, 14, 18);
     --themeColor1: rgb(16, 16, 20);
     --themeColor2: rgb(48, 48, 50);
     --themeColor3: rgb(32, 32, 34);

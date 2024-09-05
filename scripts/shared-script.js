@@ -1,9 +1,11 @@
 let ColorTheme = false;
 let HotTheme1 = 'corpo-dark';
-let HotTheme2 = 'light';
+let HotTheme2 = 'plum';
 let SetTheme = '';
 
 updateTheme();
+
+let allTextBoxes = document.getElementsByClassName("text-box")
 
 function updateTheme() {
     if (ColorTheme) {
@@ -21,4 +23,9 @@ function toggleTheme() {
     ColorTheme = !ColorTheme;
 
     updateTheme();
+}
+
+function copyText(source) {
+    navigator.clipboard.writeText(document.getElementById(source.id).innerText);
+    console.log("Copied contents of "+source.id+" to clipboard")
 }
