@@ -30,9 +30,11 @@
 
                     <flexSpacer style="--size:1.1;"></flexSpacer>
 
-                    <div id="the-dropdown" class="outline button horizontal-action-box glow matter-child"></div>
-                    <flexSpacer style="--size:0.5; max-width:var(--buttonSize);"></flexSpacer>
-                    <div id="the-options" class="outline button horizontal-action-box glow matter-child"></div>
+                    <div id="the-top-bar-end-holder" class="horizontal-holder">
+                        <div id="the-dropdown" class="outline button horizontal-action-box glow matter-child"></div>
+                        <flexSpacer style="--size:1; max-width:var(--buttonSize);"></flexSpacer>
+                        <div id="the-options" class="outline button horizontal-action-box glow matter-child"></div>
+                    </div>
 
                     <flexSpacer style="--size:0.1;max-width:var(--gutterWidth);"></flexSpacer>
                 </div>
@@ -53,19 +55,23 @@
         <div id="the-main-area">
             <divSpacer style="--size:var(--edgeBoxSize);"></divSpacer>
             <!-- Put the link for your pages unique stylesheet here -->
-            <link id="page-theme" rel="stylesheet" type="text/css" href="styles/ours/index-style.css">
+            <link id="page-theme" rel="stylesheet" type="text/css" href="styles/ours/homogenize-style.css">
             <div id="the-actual-page">
                 <!-- The actual page you are making goes in here -->
                 <!-- Everything inside this div is meant as demonstration and can be deleted -->
-                <div id="the-logo-holder">
-                    <div id="the-sigma-logo" class="logo" style="mask-image: url(SVGs/ours/logo.svg);"></div>
-                </div>
-                <div id="the-mission-holder">
-                    <div id="the-mission" class="text-box glow" onclick="copyText(this)">
-                        Homogenous Design is an open-source collection of styles from companies, websites, apps, and games,
-                        curated with the purpose of allowing developers to design things that integrate seemlessly with their desired platform.
+                <div id="the-page-title">Google</div>
+                <div id="the-viewport-holder">
+                    <iframe id="the-viewport" class="outline glow" src="homogenize/google.html"></iframe>
+                    <div id="the-viewport-bottom-bar" class="outline">
+                        <flexSpacer style="--size:1;"></flexSpacer>
+
+                        <div id="the-fullscreen-button" class="button outline glow">
+                            <input type="checkbox">
+                            <div id="the-fullscreen-icon" class="icon"></div>
+                        </div>
                     </div>
                 </div>
+                <div class="the-page-content"></div>
             </div>
             <divSpacer style="--size:var(--edgeBoxSize);"></divSpacer>
         </div>

@@ -7,6 +7,9 @@
     --iconSize: 40px;
     --logoSize: 160px;
 
+    --titleBoxSize: 64px;
+
+    --maxWidthSmaller: 640px;
     --maxWidthSmall: 896px;
     --maxWidth: 1024px;
     --maxWidthBig: 1280px;
@@ -16,6 +19,8 @@
     --borderWidth: 2px;
     --borderRadius: 16px;
     --buttonPadding: 8px;
+
+    --edgeFalloffRadius: max(var(--borderRadius), min(calc(100vw - var(--maxWidthBig)), var(--edgeBoxSize)/2));
 
     /* Gutter variables */
     --gutterWidth: 4px;
@@ -29,8 +34,9 @@
     --hoverRise: 2px;
     
     /* Text variables */
-    --textSize: 24px;
     --textSizeSmall: 16px;
+    --textSize: 24px;
+    --textSizeLarge: 32px;
     font-family: Arial, sans-serif;
     font-size: var(--textSize);
 
@@ -113,7 +119,7 @@ body {
     color: var(--textColor);
     font-size: var(--textSize);
 
-    max-width: var(--maxWidthSmall);
+    max-width: var(--maxWidthSmaller);
 
     padding: var(--gutterWidth);
     margin: var(--edgeGutter);
@@ -135,15 +141,18 @@ body {
     flex-direction: row;
 }
 flexSpacer {
+    pointer-events: none;
     display: flex;
     flex-grow: var(--size);
 
     position: relative;
 }
 divSpacer {
-    aspect-ratio: 1;
+    display: block;
+    pointer-events: none;
 
     position: relative;
+    width: var(--size);
     height: var(--size);
 }
 .outline {
@@ -151,7 +160,7 @@ divSpacer {
     border-width: var(--borderWidth);
     border-color: var(--outlineColor);
 }
-.glow:hover:not(:has(> .matter-child:hover)) {
+.glow:hover:not(:has(.glow:hover)) {
     border-color: var(--glowGolor);
 }
 .shadow {
@@ -170,6 +179,7 @@ divSpacer {
 }
 
 .edge-holder {
+    pointer-events: none;
     z-index: 10;
     display: flex;
     align-items: center;
@@ -194,8 +204,10 @@ divSpacer {
     padding: var(--gutterWidth);
 }
 .edge-box.top {
+    pointer-events: all;
     flex-wrap: wrap;
     align-self: start;
+    justify-content: end;
 
     position: relative;
     min-height: var(--edgeBoxSize);
@@ -204,7 +216,7 @@ divSpacer {
 
     padding-bottom: 0px;
 
-    border-radius: 0px 0px var(--borderRadius) var(--borderRadius);
+    border-radius: 0px 0px var(--edgeFalloffRadius) var(--edgeFalloffRadius);
 }
 .edge-box.bottom {
     padding-top: 0px;
@@ -242,6 +254,14 @@ divSpacer {
 
     margin: var(--gutterWidth);
 }
+#the-top-bar-end-holder {
+    display: flex;
+    flex-grow: 0.5;
+    justify-self: end;
+
+    position: relative;
+    max-width: calc((var(--buttonSize) + var(--gutterWidth2))*3);
+}
 
 #the-search-input {
     display: flex;
@@ -265,6 +285,7 @@ divSpacer {
     margin: 0px;
 }
 #the-theme-switch {
+    pointer-events: all;
     top: 0px;
     margin: calc(var(--gutterWidth)*2);
 
@@ -299,10 +320,10 @@ divSpacer {
 
 #the-main-area {
     z-index: 0;
-    display: flex;
-    flex-direction: column;
+    display: block;
 
-    position: relative;
+
+    position: absolute;
     left: calc(50% - (min(100vw, var(--maxWidthBig)))/2);
     width: 100vw;
     max-width: var(--maxWidthBig);
