@@ -44,27 +44,31 @@
 
             <div id="the-bottom-holder" class="edge-holder">
                 <div id="the-bottom-bar" class="edge-box bottom horizontal-holder">
-                    <label id="the-theme-switch" class="shadow outline button glow">
+                    <label id="the-theme-switch" class="theme-switch shadow outline button glow">
                         <input type="button" onclick="toggleTheme()">
-                        <div id="the-theme-icon" class="icon" style="mask-image: url(SVGs/ours/themeDark.svg);"></div>
+                        <div class="icon" style="mask-image: url(SVGs/ours/themeDark.svg);"></div>
                     </label>
                     <flexSpacer style="--size:1;"></flexSpacer>
                 </div>
             </div>
         </div>
         <div id="the-main-area">
-            <divSpacer style="--size:var(--edgeBoxSize);"></divSpacer>
+            <div id="the-main-area-top-spacer"></div>
             <!-- Put the link for your pages unique stylesheet here -->
             <link id="page-theme" rel="stylesheet" type="text/css" href="styles/ours/homogenize-style.css">
             <div id="the-actual-page">
                 <!-- The actual page you are making goes in here -->
                 <!-- Everything inside this div is meant as demonstration and can be deleted -->
-                <div id="the-page-title">Google</div>
-                <div id="the-viewport-holder">
-                    <iframe id="the-viewport" class="outline glow" src="homogenize/google.html"></iframe>
+                <div id="the-page-title" class="title-box glow" onclick="copyText(this)">Google</div>
+                <div id="the-page-result">
+                    <div id="the-viewport-holder">
+                        <iframe id="the-viewport" class="outline glow" src="homogenize/google.html"></iframe>
+                    </div>
                     <div id="the-viewport-bottom-bar" class="outline">
-                        <flexSpacer style="--size:1;"></flexSpacer>
-
+                        <label id="the-viewport-bottom-bar-theme-switch" class="theme-switch outline button glow">
+                            <input type="button" onclick="toggleTheme()">
+                            <div class="icon" style="mask-image: url(SVGs/ours/themeDark.svg);"></div>
+                        </label>
                         <div id="the-fullscreen-button" class="button outline glow">
                             <input type="checkbox">
                             <div id="the-fullscreen-icon" class="icon"></div>

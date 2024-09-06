@@ -49,6 +49,8 @@
 }
 
 * {
+    user-select: none;
+
     color: var(--textColor);
 
     transition-duration: 0.2s;
@@ -154,6 +156,12 @@ divSpacer {
     position: relative;
     width: var(--size);
     height: var(--size);
+}
+divSpacer.horizontal {
+    height: 100%;
+}
+divSpacer.vertical {
+    width: 100%;
 }
 .outline {
     border-style: solid;
@@ -295,7 +303,7 @@ divSpacer {
     top: calc(var(--shadowRise)*-1);
     box-shadow: 0px var(--shadowRise) calc(var(--shadowBlur) + var(--shadowGrow)) var(--shadowWidth) var(--shadowColor);
 }
-#the-theme-switch > input {
+.theme-switch > input {
     opacity: 0;
 
     position: absolute;
@@ -304,13 +312,13 @@ divSpacer {
     top: 0px;
     bottom: 0px;
 }
-#the-theme-icon {
+.theme-switch > .icon {
     margin: 0px;
 
     animation: rotate 0.3s linear infinite paused;
     transition: 0.2s ease-out;
 }
-#the-theme-icon:active {
+.theme-switch > .icon:active {
     animation-play-state: running;
     transform: rotate(-90deg);
 }
@@ -321,7 +329,8 @@ divSpacer {
 #the-main-area {
     z-index: 0;
     display: block;
-
+    flex-direction: column;
+    overflow: scroll;
 
     position: absolute;
     left: calc(50% - (min(100vw, var(--maxWidthBig)))/2);
@@ -334,8 +343,11 @@ divSpacer {
 
     transition: width 0s, left 0s;
 }
+#the-main-area::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
 #the-actual-page {
     position: relative;
     width: 100%;
-    height: calc(100vh - var(--edgeBoxSize)*2);
 }

@@ -5,15 +5,28 @@ let SetTheme = '';
 
 updateTheme();
 
-let allTextBoxes = document.getElementsByClassName("text-box")
+let allTextBoxes = document.getElementsByClassName("text-box");
+
+let theTopBar = document.getElementById('the-top-bar');
+let mainAreaTopSpacer = document.getElementById('the-main-area-top-spacer');
+
+let adjustTopSpacerHeight = setInterval(function(){
+    mainAreaTopSpacer.style.height = theTopBar.offsetHeight + 'px';
+    console.log(mainAreaTopSpacer.offsetHeight)
+}, 100);
 
 function updateTheme() {
+    let themeSwitches = document.getElementsByClassName('theme-switch')
     if (ColorTheme) {
         SetTheme = HotTheme2;
-        document.getElementById('the-theme-icon').style.maskImage = "url(SVGs/ours/themeLight.svg)";
+        for (i = 0; i < themeSwitches.length; i++){
+            themeSwitches[i].getElementsByClassName('icon')[0].style.maskImage = "url(SVGs/ours/themeLight.svg)";
+        }
     } else {
         SetTheme = HotTheme1;
-        document.getElementById('the-theme-icon').style.maskImage = "url(SVGs/ours/themeDark.svg)";
+        for (i = 0; i < themeSwitches.length; i++){
+            themeSwitches[i].getElementsByClassName('icon')[0].style.maskImage = "url(SVGs/ours/themeDark.svg)";
+        }
     }
     
     document.getElementById('color-theme').setAttribute('href', 'styles/ours/'+SetTheme+'-theme.css');

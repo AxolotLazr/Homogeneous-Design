@@ -1,5 +1,15 @@
-#the-actual-page {
-
+#the-main-area:has(#the-fullscreen-button > input:checked) {
+    z-index: 20;
+}
+#the-main-area::-webkit-scrollbar {
+    opacity: 0;
+}
+#the-actual-page:has(#the-fullscreen-button > input:checked) {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
 }
 #the-page-title {
     display: flex;
@@ -15,7 +25,7 @@
 
     font-size: var(--textSizeLarge);
 }
-#the-viewport-holder {
+#the-page-result {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,18 +35,64 @@
     height: calc(((var(--maxWidthSmaller)/16)*9) + var(--buttonSize)*2);
 
     margin: var(--edgeGutter);
+
+    transition: all 0s;
+}
+#the-page-result:has(#the-fullscreen-button > input:checked) {
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    height: calc(100vh - var(--edgeGutter));
+    background-color: var(--themeColor1);
+
+    margin-bottom: 0px;
+}
+#the-viewport-holder {
+    display: flex;
+    aspect-ratio: 16/9;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    width: var(--maxWidthSmaller);
+    max-width: 100%;
+
+    border: solid;
+    border-width: var(--borderWidth);
+    border-color: rgb(0,0,0,0);
+
+    transition: all 0s;
+}
+#the-page-result:has(#the-fullscreen-button > input:checked) #the-viewport-holder {
+    display: flex;
+    flex-grow: 1;
+
+    width: unset;
 }
 #the-viewport {
-    display: flex;
+    display: block;
     aspect-ratio: 16/9;
     scale: 0.5;
 
-    position: relative;
-    width: calc(var(--maxWidthSmaller)*2);
-    top: calc(((var(--maxWidthSmaller)/16)*9)/-2);
+    position: absolute;
+    width: 200%;
 
     border-width: calc(var(--borderWidth)*2);
     border-radius: calc(var(--borderRadius)*2);
+}
+#the-page-result:has(#the-fullscreen-button > input:checked) #the-viewport {
+    scale: 1;
+
+    position: absolute;
+    width: 100%;
+
+    border-width: var(--borderWidth);
+    border-radius: var(--borderRadius);
 }
 #the-viewport-bottom-bar {
     display: flex;
@@ -44,8 +100,6 @@
     justify-content: center;
 
     position: relative;
-    top: calc((var(--maxWidthSmaller)/16)*-9);
-    min-width: calc(var(--maxWidthSmaller)/2);
     width: fit-content;
     height: fit-content;
     background-color: var(--themeColor3);
@@ -53,6 +107,17 @@
     margin: var(--gutterWidth);
 
     border-radius: 100vh;
+
+    transition: all 0s;
+}
+#the-viewport-bottom-bar:has(#the-fullscreen-button > input:checked) {
+    border-radius: calc((var(--buttonSize) + var(--gutterWidth2)*2)/2) calc((var(--buttonSize) + var(--gutterWidth2)*2)/2) 0vh 0vh;
+}
+#the-viewport-bottom-bar-theme-switch {
+    display: none;
+}
+#the-viewport-bottom-bar:has(input:checked) #the-viewport-bottom-bar-theme-switch {
+    display: flex;
 }
 #the-fullscreen-button {
     overflow: hidden;
