@@ -11,6 +11,19 @@
     top: 0px;
     bottom: 0px;
 }
+#the-theme-switch {
+    opacity: 1;
+
+    left: 0px;
+
+    transition: all 0.2s ease-in-out, opacity 0.1s linear;
+}
+body:has(#the-fullscreen-button > input:checked) #the-theme-switch {
+    opacity: 0;
+
+    left: calc(var(--buttonSize)*10);
+}
+
 #the-page-title {
     display: flex;
     flex-direction: column;
@@ -47,10 +60,11 @@
     left: 0px;
     right: 0px;
     top: 0px;
-    height: calc(100vh - var(--edgeGutter));
+    height: calc(100vh - var(--edgeGutter2));
     background-color: var(--themeColor1);
 
-    margin-bottom: 0px;
+    margin: 0px;
+    padding: var(--edgeGutter);
 }
 #the-viewport-holder {
     display: flex;
@@ -93,13 +107,17 @@
 
     border-width: var(--borderWidth);
     border-radius: var(--borderRadius);
+
+    box-shadow: 0px var(--shadowRise) var(--bigGutter) var(--gutterWidth2) var(--shadowColor);
 }
+
 #the-viewport-bottom-bar {
     display: flex;
     flex-direction: row;
     justify-content: center;
 
     position: relative;
+    min-width: var(--maxWidthSmallerer);
     width: fit-content;
     height: fit-content;
     background-color: var(--themeColor3);
@@ -111,16 +129,25 @@
     transition: all 0s;
 }
 #the-viewport-bottom-bar:has(#the-fullscreen-button > input:checked) {
-    border-radius: calc((var(--buttonSize) + var(--gutterWidth2)*2)/2) calc((var(--buttonSize) + var(--gutterWidth2)*2)/2) 0vh 0vh;
+    margin-top: var(--edgeGutter);
 }
 #the-viewport-bottom-bar-theme-switch {
-    display: none;
+    opacity: 0;
+
+    left: calc(-10*var(--buttonSize));
+
+    transition: all 0.2s ease-in-out, opacity 0s linear;
 }
 #the-viewport-bottom-bar:has(input:checked) #the-viewport-bottom-bar-theme-switch {
-    display: flex;
+    opacity: 1;
+
+    left: calc(-1*(var(--buttonSize) + var(--gutterWidth3) + var(--borderWidth2)));
+
+    transition: all 0.2s ease-in-out, opacity 0.1s linear;
 }
 #the-fullscreen-button {
     overflow: hidden;
+
     background-color: var(--themeColor2);
 }
 #the-fullscreen-button > input {

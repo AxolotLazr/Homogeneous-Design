@@ -12,7 +12,6 @@ let mainAreaTopSpacer = document.getElementById('the-main-area-top-spacer');
 
 let adjustTopSpacerHeight = setInterval(function(){
     mainAreaTopSpacer.style.height = theTopBar.offsetHeight + 'px';
-    console.log(mainAreaTopSpacer.offsetHeight)
 }, 100);
 
 function updateTheme() {

@@ -9,6 +9,7 @@
 
     --titleBoxSize: 64px;
 
+    --maxWidthSmallerer: 320px;
     --maxWidthSmaller: 640px;
     --maxWidthSmall: 896px;
     --maxWidth: 1024px;
@@ -17,10 +18,9 @@
 
     /* Outline variables */
     --borderWidth: 2px;
+    --borderWidth2: calc(var(--borderWidth)*2);
     --borderRadius: 16px;
     --buttonPadding: 8px;
-
-    --edgeFalloffRadius: max(var(--borderRadius), min(calc(100vw - var(--maxWidthBig)), var(--edgeBoxSize)/2));
 
     /* Gutter variables */
     --gutterWidth: 4px;
@@ -28,11 +28,10 @@
     --gutterWidth3: calc(var(--gutterWidth)*3);
     
     --edgeGutter: 12px;
+    --edgeGutter2: calc(var(--edgeGutter)*2);
     --textEdgeGutter: 32px;
     --bigGutter: 64px;
 
-    --hoverRise: 2px;
-    
     /* Text variables */
     --textSizeSmall: 16px;
     --textSize: 24px;
@@ -46,6 +45,13 @@
     --shadowDistance: 2px;
     --shadowRise: 4px;
     --shadowGrow: 4px;
+
+    /* Misc variables */
+    --hoverRise: 2px;
+    --buttonRise: -2px;
+    --buttonFall: 2px;
+
+    --edgeFalloffRadius: max(var(--borderRadius), min(calc(100vw - var(--maxWidthBig)), var(--edgeBoxSize)/2));
 }
 
 * {
@@ -107,12 +113,19 @@ body {
     aspect-ratio: 1/1;
 
     position: relative;
+    top: 0px;
     height: var(--buttonSize);
     background-color: var(--themeColor2);
 
     margin: var(--gutterWidth);
 
     border-radius: calc(var(--buttonSize)/2  + var(--borderWidth));
+}
+.button:hover{
+    top: var(--buttonRise);
+}
+.button:active{
+    top: var(--buttonFall);
 }
 .text-box {
     cursor: text;
