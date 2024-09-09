@@ -1,13 +1,12 @@
 :root{
     /* Size variables */
+    --boxSize: 64px;
     --edgeBoxSize: 64px;
     --searchSize: 512px;
     --buttonSize: 40px;
     --buttonSizeWide: 64px;
     --iconSize: 40px;
     --logoSize: 160px;
-
-    --titleBoxSize: 64px;
 
     --maxWidthSmallerer: 320px;
     --maxWidthSmaller: 640px;
@@ -138,6 +137,22 @@ body {
 
     padding: var(--gutterWidth);
     margin: var(--edgeGutter);
+
+    border-style: solid;
+    border-width: var(--borderWidth);
+    border-radius: var(--borderRadius);
+    border-color: rgb(0,0,0,0);
+}
+.title-box {
+    cursor: text;
+    user-select: none;
+
+    width: fit-content;
+
+    color: var(--textColor);
+    font-size: var(--textSizeLarge);
+
+    padding: var(--gutterWidth);
 
     border-style: solid;
     border-width: var(--borderWidth);

@@ -59,13 +59,14 @@
             <div id="the-actual-page">
                 <!-- The actual page you are making goes in here -->
                 <!-- Everything inside this div is meant as demonstration and can be deleted -->
-                <div id="the-page-title" class="title-box glow" onclick="copyText(this)">Google</div>
+                <div id="the-title-holder"><div id="the-page-title" class="title-box glow" onclick="copyText(this)">Google</div></div>
+
                 <div id="the-page-result">
-                    <div id="the-viewport-holder">
-                        <iframe id="the-viewport" class="outline glow" src="homogenize/google.html"></iframe>
+                    <div id="the-viewport-holder" class="outline glow shadow">
+                        <iframe id="the-viewport" src="homogenize/google.html"></iframe>
                     </div>
-                    <div id="the-viewport-bottom-bar" class="outline">
-                        <label id="the-viewport-bottom-bar-theme-switch" class="theme-switch outline button glow">
+                    <div id="the-viewport-bottom-bar" class="outline glow shadow">
+                        <label id="the-viewport-bottom-bar-theme-switch" class="theme-switch outline button glow shadow">
                             <input type="button" onclick="toggleTheme()">
                             <div class="icon" style="mask-image: url(SVGs/ours/themeDark.svg);"></div>
                         </label>
@@ -78,6 +79,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="the-page-content"></div>
             </div>
             <divSpacer style="--size:var(--edgeBoxSize);"></divSpacer>

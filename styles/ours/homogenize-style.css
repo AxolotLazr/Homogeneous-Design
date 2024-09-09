@@ -24,19 +24,22 @@ body:has(#the-fullscreen-button > input:checked) #the-theme-switch {
     left: calc(var(--buttonSize)*10);
 }
 
-#the-page-title {
+#the-title-holder {
     display: flex;
     flex-direction: column;
-    text-align: center;
+    align-items: center;
     justify-content: end;
 
     position: relative;
     width: 100%;
-    height: var(--titleBoxSize);
+    height: var(--boxSize);
 
     margin: var(--edgeGutter);
+}
+#the-page-title {
+    display: flex;
 
-    font-size: var(--textSizeLarge);
+    position: relative;
 }
 #the-page-result {
     display: flex;
@@ -49,7 +52,7 @@ body:has(#the-fullscreen-button > input:checked) #the-theme-switch {
 
     margin: var(--edgeGutter);
 
-    transition: all 0s;
+    transition: all 0s linear, background-color 0.2 ease-in-out;
 }
 #the-page-result:has(#the-fullscreen-button > input:checked) {
     z-index: 100;
@@ -68,6 +71,7 @@ body:has(#the-fullscreen-button > input:checked) #the-theme-switch {
 }
 #the-viewport-holder {
     display: flex;
+    overflow: hidden;
     aspect-ratio: 16/9;
     align-items: center;
     justify-content: center;
@@ -76,11 +80,9 @@ body:has(#the-fullscreen-button > input:checked) #the-theme-switch {
     width: var(--maxWidthSmaller);
     max-width: 100%;
 
-    border: solid;
-    border-width: var(--borderWidth);
-    border-color: rgb(0,0,0,0);
+    border-radius: var(--borderRadius);
 
-    transition: all 0s;
+    transition: all 0s linear, border 0.2s ease-in-out;
 }
 #the-page-result:has(#the-fullscreen-button > input:checked) #the-viewport-holder {
     display: flex;
@@ -96,19 +98,15 @@ body:has(#the-fullscreen-button > input:checked) #the-theme-switch {
     position: absolute;
     width: 200%;
 
-    border-width: calc(var(--borderWidth)*2);
-    border-radius: calc(var(--borderRadius)*2);
+    border-style: none;
+
+    transition: all 0s linear;
 }
 #the-page-result:has(#the-fullscreen-button > input:checked) #the-viewport {
     scale: 1;
 
     position: absolute;
     width: 100%;
-
-    border-width: var(--borderWidth);
-    border-radius: var(--borderRadius);
-
-    box-shadow: 0px var(--shadowRise) var(--bigGutter) var(--gutterWidth2) var(--shadowColor);
 }
 
 #the-viewport-bottom-bar {
@@ -126,7 +124,7 @@ body:has(#the-fullscreen-button > input:checked) #the-theme-switch {
 
     border-radius: 100vh;
 
-    transition: all 0s;
+    transition: all 0.2s ease-in-out;
 }
 #the-viewport-bottom-bar:has(#the-fullscreen-button > input:checked) {
     margin-top: var(--edgeGutter);
@@ -141,7 +139,7 @@ body:has(#the-fullscreen-button > input:checked) #the-theme-switch {
 #the-viewport-bottom-bar:has(input:checked) #the-viewport-bottom-bar-theme-switch {
     opacity: 1;
 
-    left: calc(-1*(var(--buttonSize) + var(--gutterWidth3) + var(--borderWidth2)));
+    left: calc(-1*(var(--buttonSize) + var(--gutterWidth) + var(--edgeGutter) + var(--borderWidth2)));
 
     transition: all 0.2s ease-in-out, opacity 0.1s linear;
 }
