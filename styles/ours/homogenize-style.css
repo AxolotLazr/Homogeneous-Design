@@ -58,6 +58,7 @@ body:has(#the-fullscreen-button > input:checked) #the-theme-switch {
     z-index: 100;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     
     position: fixed;
     left: 0px;
@@ -89,6 +90,7 @@ body:has(#the-fullscreen-button > input:checked) #the-theme-switch {
     flex-grow: 1;
 
     width: unset;
+    max-height: calc((100vw - var(--edgeGutter2))/16*9);
 }
 #the-viewport {
     display: block;
@@ -115,8 +117,9 @@ body:has(#the-fullscreen-button > input:checked) #the-theme-switch {
     justify-content: center;
 
     position: relative;
-    min-width: var(--maxWidthSmallerer);
-    width: fit-content;
+    min-width: fit-content;
+    width: var(--maxWidthSmallerer);
+    max-width: 100%;
     height: fit-content;
     background-color: var(--themeColor3);
 
