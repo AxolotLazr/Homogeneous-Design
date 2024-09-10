@@ -1,83 +1,179 @@
-:root {
-    --optionBarSize: 56px;
+#the-main-area:has(#the-fullscreen-button > input:checked) {
+    z-index: 20;
 }
-.the-middle-holder:has( .the-viewport-fullscreen-button > input:checked) {
-    z-index: 10;
+#the-main-area::-webkit-scrollbar {
+    opacity: 0;
 }
-.the-viewport-holder {
+#the-actual-page:has(#the-fullscreen-button > input:checked) {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+}
+#the-theme-switch {
+    opacity: 1;
+
+    left: 0px;
+
+    transition: all 0.2s ease-in-out, opacity 0.1s linear;
+}
+body:has(#the-fullscreen-button > input:checked) #the-theme-switch {
+    opacity: 0;
+
+    left: calc(var(--buttonSize)*10);
+}
+
+#the-title-holder {
     display: flex;
     flex-direction: column;
-    gap: var(--gutterWidth);
-    align-items: end;
-    justify-self: center;
+    align-items: center;
+    justify-content: end;
 
     position: relative;
-    height: fit-content;
-    transition: all 0.2s, padding-top 0s ease-out;
-}
-.the-viewport-holder:has( .the-viewport-fullscreen-button > input:checked) {
-    position: fixed;
-    left: 0%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
+    width: 100%;
+    height: var(--boxSize);
+
     margin: var(--edgeGutter);
 }
-.the-viewport {
+#the-page-title {
     display: flex;
-    aspect-ratio: 16 / 9;
-    flex-grow: 1;
 
     position: relative;
-    height: 1080px;
-    max-height: calc(min(100vh - (var(--edgeBoxSize)*2 + var(--optionBarSize) + var(--bigGutter) + var(--gutterWidth)), (100vw - var(--edgeGutter)*2)/16*9));
-    box-shadow: 0px 4px var(--shadowBlur) 0px var(--shadowColor);
-
-    border-width: var(--borderWidth);
-    border-radius: var(--borderRadius);
-    border-color: var(--outlineColor);
-    border-style: solid;
-
-    transition: all 0.2s, max-height 0s ease-out;
 }
-.the-viewport-holder:has( .the-viewport-fullscreen-button > input:checked) .the-viewport {
-    max-height: calc(min(100vh - (var(--optionBarSize) + var(--edgeGutter)*2 + var(--gutterWidth)), (100vw - var(--edgeGutter)*2)/16*9));
-}
-.the-viewport:hover {
-    box-shadow: 0px var(--shadowRise) var(--shadowBlur) var(--shadowGrow) var(--shadowColor);
-
-    border-color: var(--highlightOverlayColor);
-}
-.the-viewport-option-bar {
+#the-page-result {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+    left: 0;
+    height: calc(((var(--maxWidthSmaller)/16)*9) + var(--buttonSize)*2);
+
+    margin: var(--edgeGutter);
+
+    transition: all 0s linear, background-color 0.2 ease-in-out;
+}
+#the-page-result:has(#the-fullscreen-button > input:checked) {
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    height: calc(100vh - var(--edgeGutter2));
+    background-color: var(--themeColor1);
+
+    margin: 0px;
+    padding: var(--edgeGutter);
+}
+#the-viewport-holder {
+    display: flex;
+    overflow: hidden;
+    aspect-ratio: 16/9;
     align-items: center;
     justify-content: center;
 
     position: relative;
-    width: fit-content;
-    height: fit-content;
-    background-color: var(--themeColor2);
-    
-    border-width: var(--borderWidth);
-    border-radius: var(--borderRadius);
-    border-color: var(--outlineColor);
-    border-style: solid;
-}
-.the-viewport-fullscreen-button {
-    height: var(--buttonSize);
+    width: var(--maxWidthSmaller);
+    max-width: 100%;
 
-    mask-image: url(../../SVGs/ours/fullscreenIcon.svg);
+    border-radius: var(--borderRadius);
+
+    transition: all 0s linear, border 0.2s ease-in-out;
 }
-.the-viewport-fullscreen-button:has(> input:checked) {
-    mask-image: url(../../SVGs/ours/exitFullscreenIcon.svg);
+#the-page-result:has(#the-fullscreen-button > input:checked) #the-viewport-holder {
+    display: flex;
+    flex-grow: 1;
+
+    width: unset;
+    max-height: calc((100vw - var(--edgeGutter2))/16*9);
 }
-.the-viewport-fullscreen-button > input {
+#the-viewport {
+    display: block;
+    aspect-ratio: 16/9;
+    scale: 0.5;
+
+    position: absolute;
+    width: 200%;
+
+    border-style: none;
+
+    transition: all 0s linear;
+}
+#the-page-result:has(#the-fullscreen-button > input:checked) #the-viewport {
+    scale: 1;
+
+    position: absolute;
+    width: 100%;
+}
+
+#the-viewport-bottom-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    position: relative;
+    min-width: fit-content;
+    width: var(--maxWidthSmallerer);
+    max-width: 100%;
+    height: fit-content;
+    background-color: var(--themeColor3);
+
+    margin: var(--gutterWidth);
+
+    border-radius: 100vh;
+
+    transition: all 0.2s ease-in-out;
+}
+#the-viewport-bottom-bar:has(#the-fullscreen-button > input:checked) {
+    margin-top: var(--edgeGutter);
+}
+#the-viewport-bottom-bar-theme-switch {
     opacity: 0;
+
+    left: calc(-10*var(--buttonSize));
+
+    transition: all 0.2s ease-in-out, opacity 0s linear;
+}
+#the-viewport-bottom-bar:has(input:checked) #the-viewport-bottom-bar-theme-switch {
+    opacity: 1;
+
+    left: calc(-1*(var(--buttonSize) + var(--gutterWidth) + var(--edgeGutter) + var(--borderWidth2)));
+
+    transition: all 0.2s ease-in-out, opacity 0.1s linear;
+}
+#the-fullscreen-button {
+    overflow: hidden;
+
+    background-color: var(--themeColor2);
+}
+#the-fullscreen-button > input {
+    opacity: 0;
+    cursor: pointer;
 
     position: absolute;
     left: 0px;
     right: 0px;
     top: 0px;
     bottom: 0px;
+
+    margin: 0px;
+}
+#the-fullscreen-icon {
+    pointer-events: none;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    mask-image: url(/SVGs/ours/fullscreen.svg);
+
+    margin: 0px;
+}
+#the-fullscreen-button:has(input:checked) #the-fullscreen-icon {
+    mask-image: url(/SVGs/ours/exitFullscreen.svg);
 }

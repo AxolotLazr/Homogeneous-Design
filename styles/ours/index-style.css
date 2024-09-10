@@ -1,36 +1,40 @@
-:root{
-    --logoHeight: 160px;
-
-    --missionWidth: calc(128px*5);
-}
-.the-logo-holder {
+#the-actual-page {
     display: flex;
-    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-    width: 100%;
+#the-logo-holder {
+    display: flex;
+
+    position: relative;
+    width: fit-content;
+    height: fit-content;
 
     align-items: end;
     justify-content: center;
 }
-.the-sigma-logo {
+#the-sigma-logo {
     display: flex;
 
     position: relative;
-    bottom: calc((var(--logoHeight)/40)*-8);
-    height: calc((var(--logoHeight)/40)*48);
+    height: calc((var(--logoSize)/40)*48);
 }
-.the-mission-holder {
+#the-mission-holder {
     display: flex;
     flex-direction: row;
-    flex: 1;
+
+    position: relative;
+    width: fit-content;
+    max-width: 100vw;
 
     justify-content: center;
     text-align: center;
 }
-.the-mission {
+#the-mission {
     display: flex;
     
     position: relative;
-    top: calc((var(--logoHeight)/40)*8);
     width: var(--missionWidth);
 }

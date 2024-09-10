@@ -6,7 +6,7 @@
     background-color: var(--iconColor);
     mask-size: 100%;
     mask-repeat: no-repeat;
-    mask-image: url(../../SVGs/ours/defaultIcon.svg);
+    mask-image: url(../../SVGs/ours/default.svg);
 }
 
 .the-common-ancestor {
