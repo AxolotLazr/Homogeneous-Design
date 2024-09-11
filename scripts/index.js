@@ -54,16 +54,16 @@ let baseBody = `
 function updateTheme() {
     let themeSwitches = document.getElementsByClassName('theme-switch')
     if (ColorTheme) {
-        SetTheme = HotTheme2;
+        currentTheme = HotTheme2;
         for (i = 0; i < themeSwitches.length; i++){
             themeSwitches[i].getElementsByClassName('icon')[0].style.maskImage = "url(SVGs/icons/light.svg)";
         }
     } else {
-        SetTheme = HotTheme1;
+        currentTheme = HotTheme1;
         for (i = 0; i < themeSwitches.length; i++){
             themeSwitches[i].getElementsByClassName('icon')[0].style.maskImage = "url(SVGs/icons/dark.svg)";
         }
     }
     
-    document.getElementById('theme').setAttribute('href', 'styles/themes/'+SetTheme+'.css');
+    document.getElementById('theme').setAttribute('href', 'styles/themes/'+currentTheme+'.css');
 }
