@@ -170,10 +170,10 @@ body:has(#the-fullscreen-button > input:checked) #the-theme-switch {
     right: 0px;
     top: 0px;
     bottom: 0px;
-    mask-image: url(/SVGs/ours/fullscreen.svg);
+    mask-image: url(../../SVGs/icons/fullscreen.svg);
 
     margin: 0px;
 }
 #the-fullscreen-button:has(input:checked) #the-fullscreen-icon {
-    mask-image: url(/SVGs/ours/exitFullscreen.svg);
+    mask-image: url(../../SVGs/icons/exitFullscreen.svg);
 }

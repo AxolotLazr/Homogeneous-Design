@@ -8,71 +8,35 @@
         </style>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link id="color-theme" rel="stylesheet" type="text/css" href="styles/ours/default-theme.css">
-        <link id="base-theme" rel="stylesheet" type="text/css" href="styles/ours/shared-style.css">
+        <link id="theme" rel="stylesheet" type="text/css" href="styles/themes/default.css">
+        <link id="style" rel="stylesheet" type="text/css" href="styles/shared.css">
         <title>Homo</title>
     </head>
-    <body>
-        <div id="the-baseline">
-            <div id="the-edge-shadow"></div>
-            <div id="the-top-holder" class="edge-holder">
-                <div id="the-top-bar" class="edge-box top shadow outline glow horizontal-holder">
-                    <flexSpacer style="--size:0.1;max-width:var(--gutterWidth); order:1;"></flexSpacer>
-
-                    <div id="the-top-bar-logo" class="logo" style="mask-image: url(SVGs/ours/logo.svg); order:2;"></div>
-
-                    <flexSpacer style="--size:1;order:3;"></flexSpacer>
-
-                    <div id="the-search-holder" class="horizontal-holder outline horizontal-action-box glow">
-                        <input id="the-search-input" type="text" placeholder="Search Homo">
-                        <div id="the-search-icon" class="icon" style="mask-image: url(SVGs/ours/search.svg);"></div>
-                    </div>
-
-                    <flexSpacer style="--size:1.1; order:5;"></flexSpacer>
-
-                    <div id="the-top-bar-end-holder" class="horizontal-holder" style="order:6;">
-                        <div id="the-dropdown" class="outline button horizontal-action-box glow matter-child"></div>
-                        <flexSpacer style="--size:1; max-width:var(--buttonSize);"></flexSpacer>
-                        <div id="the-options" class="outline button horizontal-action-box glow matter-child"></div>
-                    </div>
-
-                    <flexSpacer style="--size:0.1;max-width:var(--gutterWidth); order:7;"></flexSpacer>
-                </div>
-            </div>
-
-            <flexSpacer style="--size:1;"></flexSpacer>
-
-            <div id="the-bottom-holder" class="edge-holder">
-                <div id="the-bottom-bar" class="edge-box bottom horizontal-holder">
-                    <label id="the-theme-switch" class="theme-switch shadow outline button glow">
-                        <input type="button" onclick="toggleTheme()">
-                        <div class="icon" style="mask-image: url(SVGs/ours/themeDark.svg);"></div>
-                    </label>
-                    <flexSpacer style="--size:1;"></flexSpacer>
-                </div>
+    <div id="the-actual-page">
+        <!-- ▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫ Put the link for your pages unique stylesheet here ▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫ -->
+        <!-- ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ -->
+        <link id="local-style" rel="stylesheet" type="text/css" href="styles/index.css">
+        <!-- ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ -->
+        <!--                                                                                                      -->
+        <!--                                                                                                      -->
+        <!-- ▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫ Make your page here ▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫ -->
+        <!-- ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ -->
+        <div id="the-logo-holder">
+            <div id="the-sigma-logo" class="logo" style="mask-image: url(SVGs/logos/default.svg);"></div>
+        </div>
+        <div id="the-mission-holder">
+            <div id="the-mission" class="text-box glow" onclick="copyText(this)">
+                Homogenous Design is an open-source collection of styles from companies, websites, apps, and games,
+                curated with the purpose of allowing developers to design things that integrate seemlessly with their desired platform.
             </div>
         </div>
-        <div id="the-main-area">
-            <div id="the-main-area-top-spacer"></div>
-            <!-- Put the link for your pages unique stylesheet here -->
-            <link id="page-theme" rel="stylesheet" type="text/css" href="styles/ours/index-style.css">
-            <div id="the-actual-page">
-                <!-- The actual page you are making goes in here -->
-                <!-- Everything inside this div is meant as demonstration and can be deleted -->
-                <div id="the-logo-holder">
-                    <div id="the-sigma-logo" class="logo" style="mask-image: url(SVGs/ours/logo.svg);"></div>
-                </div>
-                <div id="the-mission-holder">
-                    <div id="the-mission" class="text-box glow" onclick="copyText(this)">
-                        Homogenous Design is an open-source collection of styles from companies, websites, apps, and games,
-                        curated with the purpose of allowing developers to design things that integrate seemlessly with their desired platform.
-                    </div>
-                </div>
-            </div>
-            <divSpacer style="--size:var(--edgeBoxSize);"></divSpacer>
-        </div>
-
-        <script src="scripts/index-script.js"></script>
-        <script src="scripts/shared-script.js"></script>
-    </body>
+        <!-- ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ -->
+        <!--                                                                                                      -->
+        <!--                                                                                                      -->
+        <!-- ▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫ Put the link for your pages unique script here ▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫▫ -->
+        <!-- ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ -->
+        <script src="scripts/index.js"></script>
+        <!-- ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ -->
+    </div>
+    <script src="scripts/shared.js"></script>
 </html>
