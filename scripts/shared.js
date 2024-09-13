@@ -21,6 +21,9 @@ let baseBody = `
                 <div id="the-index" class="tab tab-index">
                     <div id="the-index-title" class="title glow" onclick="copyText(this)">Index</div>
                     <hr>
+                    <div id="the-index-body" class="intrusive-body">
+                        <div class="holder page-link outline glow"></div>
+                    </div>
                 </div>
                 <div id="the-options" class="tab tab-options">
                     <div id="the-options-title" class="title glow" onclick="copyText(this)">Options</div>

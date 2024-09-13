@@ -5,7 +5,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open thePageTemplate.html",
-            "url": "http://127.0.0.1:3000/${relativeFile}",
+            "url": "http://127.0.0.1:3000/",
         }
     ]
 }

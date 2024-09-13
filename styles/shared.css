@@ -349,6 +349,16 @@ divSpacer.vertical {
 .tab.open {
     left: 0px;
 }
+.intrusive-body {
+    display: flex;
+    flex-grow: 1;
+
+    position: relative;
+    left: 0px;
+    right: 0px;
+    background-color: var(--themeColor1);
+
+}
 
 #the-edge-shadow {
     z-index: 100;
