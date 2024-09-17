@@ -343,6 +343,7 @@ divSpacer.vertical {
     bottom: 0px;
 
     margin: var(--gutterWidth);
+    padding: 0px;
 
     transition: all 0.2s ease-in-out;
 }
@@ -351,6 +352,7 @@ divSpacer.vertical {
 }
 .intrusive-body {
     display: flex;
+    flex-direction: column;
     flex-grow: 1;
 
     position: relative;
@@ -358,6 +360,16 @@ divSpacer.vertical {
     right: 0px;
     background-color: var(--themeColor1);
 
+    margin: var(--gutterWidth);
+
+    border-radius: calc(var(--borderRadius) - var(--gutterWidth2));
+}
+.page-link {
+    position: relative;
+    left: 0px;
+    right: 0px;
+
+    margin: var(--gutterWidth);
 }
 
 #the-edge-shadow {
@@ -395,13 +407,14 @@ divSpacer.vertical {
 
     position: relative;
     left: 100%;
+    right: 0px;
     top: 0px;
     bottom: 0px;
-    width: 100%;
     max-width: var(--maxWidthSmallerer);
     background-color: var(--themeColor2);
 
     margin: var(--edgeGutter);
+    margin-right: 0px;
 
     border-radius: var(--borderRadius);
 
