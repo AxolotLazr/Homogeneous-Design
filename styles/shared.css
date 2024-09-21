@@ -20,6 +20,7 @@
     --borderWidth: 2px;
     --borderWidth2: calc(var(--borderWidth)*2);
     --borderRadius: 16px;
+    --borderRadiusTiny: 4px;
     --buttonPadding: 8px;
 
     /* Gutter variables */
@@ -341,6 +342,7 @@ divSpacer.vertical {
     right: 0px;
     top: 0px;
     bottom: 0px;
+    background-color: var(--themeColor1);
 
     margin: var(--gutterWidth);
     padding: 0px;
@@ -362,7 +364,7 @@ divSpacer.vertical {
 
     margin: var(--gutterWidth);
 
-    border-radius: calc(var(--borderRadius) - var(--gutterWidth2));
+    border-radius: var(--borderRadiusTiny) var(--borderRadiusTiny) calc(var(--borderRadius) - var(--gutterWidth2)) calc(var(--borderRadius) - var(--gutterWidth2));
 }
 .page-link {
     position: relative;

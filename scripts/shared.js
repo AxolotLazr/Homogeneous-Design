@@ -16,22 +16,18 @@ let baseBody = `
     <div id="the-edge-shadow"></div>
     <div id="the-intrusive-holder">
         <div class="top-spacer"></div>
-        <div id="the-intrusive-box" class="outline shadow">
-            <div id="the-intrusive-body">
-                <div id="the-index" class="tab tab-index">
-                    <div id="the-index-title" class="title glow" onclick="copyText(this)">Index</div>
-                    <hr>
-                    <div id="the-index-body" class="intrusive-body">
-                        <div class="holder page-link outline glow"></div>
-                    </div>
-                </div>
-                <div id="the-options" class="tab tab-options">
-                    <div id="the-options-title" class="title glow" onclick="copyText(this)">Options</div>
-                    <hr>
-                </div>
+        <div id="the-index" class="tab">
+            <div id="the-index-title" class="title glow" onclick="copyText(this)">Index</div>
+            <hr>
+            <div id="the-index-body" class="intrusive-body">
+                <div class="holder page-link outline glow"></div>
             </div>
-            <div id="the-intrusive-bottom"></div>
         </div>
+        <div id="the-options" class="tab">
+            <div id="the-options-title" class="title glow" onclick="copyText(this)">Options</div>
+            <hr>
+        </div>
+        <div id="the-intrusive-bottom"></div>
     </div>
     <div id="the-top-holder" class="edge-holder">
         <div id="the-top-bar" class="edge-box top shadow outline glow horizontal-holder">
@@ -105,18 +101,18 @@ let adjustTopSpacerHeight = setInterval(function(){
 }, 100);
 
 //set up the intrusive box
-let theIntrusiveBox = document.getElementById('the-intrusive-box');
+let theIntrusiveHolder = document.getElementById('the-intrusive-holder');
 
-let intrusiveBoxOpen = false;
+let intrusiveTabOpen = false;
 let intrusiveTab = 'index';
 
 function handleIntrusiveBox(from) {
     if (intrusiveTab == from) {
-        intrusiveBoxOpen = !intrusiveBoxOpen;
-    } else if (intrusiveBoxOpen == false) {
-        intrusiveBoxOpen = !intrusiveBoxOpen;
+        intrusiveTabOpen = !intrusiveTabOpen;
+    } else if (intrusiveTabOpen == false) {
+        intrusiveTabOpen = true;
     }
-    console.log('intrusive box open: '+intrusiveBoxOpen);
+    console.log('intrusive tab open: '+intrusiveTabOpen);
 
     intrusiveTab = from;
 
@@ -125,14 +121,11 @@ function handleIntrusiveBox(from) {
     }
     console.log('intrusive tab: '+intrusiveTab);
 
-    theIntrusiveBox.getElementsByClassName('tab').namedItem('the-'+intrusiveTab).classList.add('open');
-
-    if (intrusiveBoxOpen){
-        theIntrusiveBox.classList.add('open');
-    } else {
-        theIntrusiveBox.classList.remove('open');
+    if (intrusiveTabOpen) {
+        theIntrusiveHolder.getElementsByClassName('tab').namedItem('the-'+intrusiveTab).classList.add('open');
     }
-    console.log('intrusive box classList: '+theIntrusiveBox.classList);
+    
+    console.log('intrusive classList: '+theIntrusiveHolder.classList);
 }
 
 function updateTheme() {
