@@ -50,7 +50,7 @@ let baseBody = `
                     <div class="icon" style="mask-image: url(`+hrefPrefix+`SVGs/icons/list.svg);"></div>
                 </label>
                 <flexSpacer style="--size:1; max-width:var(--buttonSize);"></flexSpacer>
-                <label id="the-options-button" class="outline button horizontal-action-box glow matter-child">
+                <label id="the-options-button" class="outline button horizontal-action-box glow matter-child spin">
                     <input type="button" onclick="handleIntrusiveBox('options')">
                     <div class="icon" style="mask-image: url(`+hrefPrefix+`SVGs/icons/settings.svg);"></div>
                 </label>
@@ -64,7 +64,7 @@ let baseBody = `
 
     <div id="the-bottom-holder" class="edge-holder">
         <div id="the-bottom-bar" class="edge-box bottom horizontal-holder">
-            <label id="the-theme-switch" class="theme-switch shadow outline button glow">
+            <label id="the-theme-switch" class="theme-switch shadow outline button glow spin">
                 <input type="button" onclick="toggleTheme()">
                 <div class="icon" style="mask-image: url(`+hrefPrefix+`SVGs/icons/dark.svg);"></div>
             </label>

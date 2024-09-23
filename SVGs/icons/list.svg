@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Created with Inkscape (http://www.inkscape.org/) -->
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
    width="128"
@@ -27,9 +27,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showguides="false"
-     inkscape:zoom="5.3522447"
-     inkscape:cx="57.639368"
-     inkscape:cy="62.870818"
+     inkscape:zoom="3.7846085"
+     inkscape:cx="65.132232"
+     inkscape:cy="61.16881"
      inkscape:window-width="1920"
      inkscape:window-height="986"
      inkscape:window-x="-11"
@@ -43,9 +43,16 @@
      inkscape:groupmode="layer"
      id="layer1">
     <path
-       style="fill:none;stroke:#ff0000;stroke-width:3.175;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-       d="M 7.4083328,16.933332 H 26.458332 M 7.4083325,7.4083322 H 26.458332 M 7.4083328,26.458332 H 26.458332"
+       style="fill:none;stroke:#ff0000;stroke-width:3.175;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:0.75"
+       d="m 13.758333,16.933333 h 11.641666 m -11.641666,6.35 h 11.641666 m -11.641666,-12.7 h 11.641666"
        id="path2"
-       sodipodi:nodetypes="cccccc" />
+       sodipodi:nodetypes="cccccc"
+       inkscape:label="path1" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:4.23333;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="m 8.4666664,10.583333 v 0 m 0,6.35 v 0 m 0,6.35 v 0"
+       id="path2-2"
+       sodipodi:nodetypes="cccccc"
+       inkscape:label="path2" />
   </g>
 </svg>

@@ -93,6 +93,9 @@ hr {
 .icon {
     display: flex;
     aspect-ratio: 1/1;
+    align-self: center;
+    place-self: center;
+    justify-self: center;
 
     position: relative;
     height: var(--iconSize);
@@ -122,14 +125,21 @@ hr {
     mask-size: 100%;
 }
 .button {
-    overflow: hidden;
+    overflow: visible;
     cursor: pointer;
 
     display: flex;
     aspect-ratio: 1/1;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    place-items: center;
+    place-content: center;
 
     position: relative;
     top: 0px;
+    width: var(--buttonSize);
     height: var(--buttonSize);
     background-color: var(--themeColor2);
 
@@ -249,6 +259,17 @@ divSpacer.vertical {
 .shadow {
     box-shadow: 0px var(--shadowDistance) var(--shadowBlur) var(--shadowWidth) var(--shadowColor);
 }
+.spin > .icon {
+    animation: rotate 0.3s linear infinite paused;
+    transition: 0.2s ease-out;
+}
+.spin > .icon:active {
+    animation-play-state: running;
+    transform: rotate(-90deg);
+}
+@keyframes rotate {
+    to {rotate: 360deg}
+}
 
 #the-baseline {
     display: flex;
@@ -320,16 +341,6 @@ divSpacer.vertical {
 
 .theme-switch > .icon {
     margin: 0px;
-
-    animation: rotate 0.3s linear infinite paused;
-    transition: 0.2s ease-out;
-}
-.theme-switch > .icon:active {
-    animation-play-state: running;
-    transform: rotate(-90deg);
-}
-@keyframes rotate {
-    to {rotate: 360deg}
 }
 
 .tab {
