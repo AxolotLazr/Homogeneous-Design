@@ -15,15 +15,15 @@ let baseBody = `
 <div id="the-baseline">
     <div id="the-edge-shadow"></div>
     <div id="the-intrusive-holder">
-        <div class="top-spacer"></div>
-        <div id="the-index" class="tab">
+        <div class="top-spacer" style="order:1;"></div>
+        <div id="the-index" class="tab shadow glow outline" style="order:2;">
             <div id="the-index-title" class="title glow" onclick="copyText(this)">Index</div>
             <hr>
             <div id="the-index-body" class="intrusive-body">
                 <div class="holder page-link outline glow"></div>
             </div>
         </div>
-        <div id="the-options" class="tab">
+        <div id="the-options" class="tab shadow glow" style="order:2;">
             <div id="the-options-title" class="title glow" onclick="copyText(this)">Options</div>
             <hr>
         </div>
@@ -92,12 +92,9 @@ updateTheme();
 let allTextBoxes = document.getElementsByClassName("text-box");
 
 let theTopBar = document.getElementById('the-top-bar');
-let mainAreaTopSpacers = document.getElementsByClassName('top-spacer');
 
 let adjustTopSpacerHeight = setInterval(function(){
-    for (i = 0; i < mainAreaTopSpacers.length; i++) {
-        mainAreaTopSpacers[i].style.height = theTopBar.offsetHeight + 'px';
-    }
+        document.documentElement.style.setProperty('--topSpacerHeight', theTopBar.offsetHeight + 'px');
 }, 100);
 
 //set up the intrusive box

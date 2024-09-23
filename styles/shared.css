@@ -51,6 +51,7 @@
     --hoverRise: 2px;
     --buttonRise: -2px;
     --buttonFall: 2px;
+    --topSpacerHeight: 0;
 
     --edgeFalloffRadius: max(var(--borderRadius), min(calc(100vw - var(--maxWidthBig)), var(--edgeBoxSize)/2));
 }
@@ -105,7 +106,6 @@ hr {
 
     mask-position: center center;
     mask-repeat: no-repeat;
-    mask-image: url(SVGs/ours/defaultIcon.svg);
     mask-size: 100%;
 }
 .logo {
@@ -120,7 +120,6 @@ hr {
     margin: var(--gutterWidth);
 
     mask-position: center center;
-    mask-image: url(../../SVGs/ours/default.svg);
     mask-repeat: no-repeat;
     mask-size: 100%;
 }
@@ -215,6 +214,9 @@ hr {
     border-width: var(--borderWidth);
     border-radius: var(--borderRadius);
     border-color: rgb(0,0,0,0);
+}
+.top-spacer {
+    height: var(--topSpacerHeight);
 }
 .flex {
     display: flex;
@@ -347,16 +349,20 @@ divSpacer.vertical {
     display: flex;
     overflow: hidden;
     flex-direction: column;
+    flex-grow: 1;
 
     position: absolute;
     left: 100%;
     right: 0px;
-    top: 0px;
+    top: var(--topSpacerHeight);
     bottom: 0px;
-    background-color: var(--themeColor1);
+    background-color: var(--themeColor2);
 
-    margin: var(--gutterWidth);
-    padding: 0px;
+    margin: var(--edgeGutter);
+    margin-right: 0px;
+    padding: var(--gutterWidth2);
+
+    border-radius: var(--borderRadius);
 
     transition: all 0.2s ease-in-out;
 }
@@ -517,6 +523,7 @@ divSpacer.vertical {
     display: block;
     flex-direction: column;
     overflow: scroll;
+    overflow-x: hidden;
 
     position: absolute;
     left: calc(50% - (min(100vw, var(--maxWidthBig)))/2);
