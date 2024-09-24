@@ -19,8 +19,8 @@ let baseBody = `
         <div id="the-index" class="tab shadow glow outline" style="order:2;">
             <div id="the-index-title" class="title glow" onclick="copyText(this)">Index</div>
             <hr>
-            <div id="the-index-body" class="intrusive-body">
-                <div class="holder page-link outline glow"></div>
+            <div id="the-index-body" class="intrusive-body outline">
+                <div class="card outline glow"></div>
             </div>
         </div>
         <div id="the-options" class="tab shadow glow" style="order:2;">
@@ -72,7 +72,7 @@ let baseBody = `
         </div>
     </div>
 </div>
-<div id="the-main-area">
+<div id="the-main-area" onclick="mainAreaClicked()">
     <div id="the-main-area-top-spacer" class="top-spacer" style="order:1;"></div>
     <divSpacer style="--size:var(--edgeBoxSize); order:3;"></divSpacer>
 </div>`;
@@ -124,7 +124,12 @@ function handleIntrusiveBox(from) {
     
     console.log('intrusive classList: '+theIntrusiveHolder.classList);
 }
-
+function mainAreaClicked() {
+    intrusiveTabOpen = false;
+    for (i = 0; i < document.getElementsByClassName('tab').length; i++) {
+        document.getElementsByClassName('tab')[i].classList.remove('open');
+    }
+}
 function updateTheme() {
     let themeSwitches = document.getElementsByClassName('theme-switch')
     if (ColorTheme) {

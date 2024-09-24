@@ -5,6 +5,7 @@
     --searchSize: 512px;
     --buttonSize: 40px;
     --buttonSizeWide: 64px;
+    --cardHeight: 64px;
     --iconSize: 40px;
     --logoSize: 160px;
     --boxHorizontalWidth: 200px;
@@ -20,7 +21,7 @@
     --borderWidth: 2px;
     --borderWidth2: calc(var(--borderWidth)*2);
     --borderRadius: 16px;
-    --borderRadiusTiny: 4px;
+    --borderRadiusTiny: 8px;
     --buttonPadding: 8px;
 
     /* Gutter variables */
@@ -49,7 +50,7 @@
 
     /* Misc variables */
     --hoverRise: 2px;
-    --buttonRise: -2px;
+    --buttonRise: 2px;
     --buttonFall: 2px;
     --topSpacerHeight: 0;
 
@@ -147,10 +148,14 @@ hr {
     border-radius: calc(var(--buttonSize)/2  + var(--borderWidth));
 }
 .button:hover {
-    top: var(--buttonRise);
+    top: calc(-1*var(--buttonRise));
+
+    box-shadow: 0px var(--buttonRise) 0px 0px var(--themeColor3);
 }
 .button:active {
     top: var(--buttonFall);
+
+    box-shadow: 0px 0px 0px 2px var(--themeColor3);
 }
 .button > input {
     opacity: 0;
@@ -255,7 +260,10 @@ divSpacer.vertical {
     border-width: var(--borderWidth);
     border-color: var(--outlineColor);
 }
-.glow:hover:not(:has(.glow:hover)) {
+.glow:hover:not(:has(.glow:hover)):not(:has(.glow:focus-within)) {
+    border-color: var(--glowGolor);
+}
+.glow:focus-within:not(:has(.glow:hover)):not(:has(.glow:focus-within)) {
     border-color: var(--glowGolor);
 }
 .shadow {
@@ -346,6 +354,8 @@ divSpacer.vertical {
 }
 
 .tab {
+    pointer-events: all;
+
     display: flex;
     overflow: hidden;
     flex-direction: column;
@@ -383,12 +393,16 @@ divSpacer.vertical {
 
     border-radius: var(--borderRadiusTiny) var(--borderRadiusTiny) calc(var(--borderRadius) - var(--gutterWidth2)) calc(var(--borderRadius) - var(--gutterWidth2));
 }
-.page-link {
+.card {
     position: relative;
     left: 0px;
     right: 0px;
+    height: var(--cardHeight);
+    background-color: var(--themeColor2);
 
     margin: var(--gutterWidth);
+
+    border-radius: var(--borderRadius);
 }
 
 #the-edge-shadow {

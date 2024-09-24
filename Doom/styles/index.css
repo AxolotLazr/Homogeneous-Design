@@ -1,0 +1,17 @@
+#the-title-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+
+    position: relative;
+    width: 100%;
+    height: var(--boxSize);
+
+    margin: var(--edgeGutter);
+}
+#the-page-title {
+    display: flex;
+
+    position: relative;
+}

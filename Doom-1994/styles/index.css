@@ -23,7 +23,7 @@ body {
 #face {
     flex-grow: 0.8;
 
-    background-image: url(../../images/ours/Non-serious/image.png);
+    background-image: url(../images/image.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -63,7 +63,7 @@ body {
 
     width: var(--hudHeit);
     background-color: grey; 
-    background-image: url(../../images/ours/Doom1994/weapons.png);
+    background-image: url(../images/weapons.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
