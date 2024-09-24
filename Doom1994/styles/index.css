@@ -1,0 +1,70 @@
+:root {
+    --hudHeit: 128px;
+    --tinyHeit: 36px;
+}
+body {
+    background-color: gray;
+}
+#inventoryBar {
+    display: flex;
+    flex-direction: row;
+
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: calc(var(--tinyHeit)*3 + 24px);
+    background-color: rgb(58, 58, 58);
+}
+#inventoryBar > * {
+    display: flex;
+    flex-grow: 1;
+}
+#face {
+    flex-grow: 0.8;
+
+    background-image: url(../../images/ours/Non-serious/image.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#keys {
+    flex-grow: 0;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+
+    width: calc(var(--tinyHeit) + 8px);
+    height: calc(var(--tinyHeit)*3 + 24px);
+    background-color: green;
+}
+.key {
+    width: var(--tinyHeit);
+    height: var(--tinyHeit);
+}
+#key-blue{
+    background-color: plum;
+}
+#key-yellow {
+    background-color: black;
+}
+#key-red {
+    background-color: yellowgreen;
+}
+.empty {
+    background-color: blue;
+}
+#gun-ammo{
+    background-color: blueviolet;
+}
+#weapons {
+    flex-grow: 0;
+
+    width: var(--hudHeit);
+    background-color: grey; 
+    background-image: url(../../images/ours/Doom1994/weapons.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
