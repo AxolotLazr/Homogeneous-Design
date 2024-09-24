@@ -11,6 +11,49 @@ let themes = [
     'something'
 ];
 
+let AxolotLazr = {
+    pfp: {
+        image: 'SolidSnake.png',
+        zoom: '1.5',
+        offsetX: '0.33',
+        offsetY: '0.1'
+    },
+    page: {
+        name: 'AxolotLazr',
+        link: '/developers/AxolotLazr'
+    }
+};
+let Non = {
+    pfp:{
+        image: 'default.png',
+        zoom: '1',
+        offsetX: '0',
+        offsetY: '0'
+    },
+    page: {
+        name: 'Non',
+        link: '/developers/Non'
+    }
+};
+
+let pages = [
+    {
+        name: 'Home',
+        link: '',
+        creator: AxolotLazr
+    },
+    {
+        name: 'Homogenize',
+        link: '/homogenize',
+        creator: AxolotLazr
+    },
+    {
+        name: 'Doom 1994',
+        link: '/homogenize/Doom-1994',
+        creator: Non
+    }
+]
+
 let baseBody = `
 <div id="the-baseline">
     <div id="the-edge-shadow"></div>
@@ -20,7 +63,6 @@ let baseBody = `
             <div id="the-index-title" class="title glow" onclick="copyText(this)">Index</div>
             <hr>
             <div id="the-index-body" class="intrusive-body outline">
-                <div class="card outline glow"></div>
             </div>
         </div>
         <div id="the-options" class="tab shadow glow" style="order:2;">
@@ -88,6 +130,29 @@ document.getElementById('the-main-area').appendChild(addedBody);
 console.log('page appended original content');
 
 updateTheme();
+
+for (i = 0; i < pages.length; i++){
+    let newCard = document.createElement('a');
+    newCard.id = pages[i].name;
+    newCard.classList = 'card outline glow';
+    newCard.href = pages[i].link + '/';
+    if (pages[i].link == currentPage){newCard.style.opacity = '0.5';}
+        let newCardTitle = document.createElement('div');
+        newCardTitle.classList = 'title';
+        newCardTitle.innerText = pages[i].name;
+        newCard.appendChild(newCardTitle);
+        
+        let newCardCreator = document.createElement('a');
+        newCardCreator.classList = 'creator outline glow';
+        newCardCreator.href = pages[i].creator.page.link;
+        newCardCreator.style.backgroundImage = 'url('+hrefPrefix+'images/PFPs/'+pages[i].creator.pfp.image+')';
+        newCardCreator.style.backgroundSize = 'calc(100%*'+pages[i].creator.pfp.zoom+')';
+        newCardCreator.style.backgroundPosition = pages[i].creator.pfp.offsetX*100+'% '+pages[i].creator.pfp.offsetY*100+'%';
+        newCardCreator.style.backgroundRepeat = 'no-repeat';
+        newCard.appendChild(newCardCreator);
+
+    document.getElementById('the-index-body').appendChild(newCard);
+}
 
 let allTextBoxes = document.getElementsByClassName("text-box");
 

@@ -3,8 +3,11 @@
     --boxSize: 64px;
     --edgeBoxSize: 64px;
     --searchSize: 512px;
+
+    --buttonSizeSmall: 32px;
     --buttonSize: 40px;
     --buttonSizeWide: 64px;
+
     --cardHeight: 64px;
     --iconSize: 40px;
     --logoSize: 160px;
@@ -92,6 +95,9 @@ hr {
     border-width: var(--borderWidth);
     border-color: var(--outlineColor);
 }
+a {
+    text-decoration: none;
+}
 .icon {
     display: flex;
     aspect-ratio: 1/1;
@@ -170,6 +176,27 @@ hr {
     margin: 0px;
 
     border: none;
+}
+.creator {
+    overflow: visible;
+    cursor: pointer;
+
+    display: flex;
+    aspect-ratio: 1/1;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    place-items: center;
+    place-content: center;
+
+    position: absolute;
+    width: var(--buttonSizeSmall);
+    height: var(--buttonSizeSmall);
+
+    margin: var(--gutterWidth);
+
+    border-radius: calc(var(--buttonSize)/2  + var(--borderWidth));
 }
 .text-box {
     cursor: text;
@@ -403,6 +430,13 @@ divSpacer.vertical {
     margin: var(--gutterWidth);
 
     border-radius: var(--borderRadius);
+}
+.card > .title {
+    font-size: var(--textSize);
+}
+.card > .creator {
+    right: 0px;
+    bottom: 0px;
 }
 
 #the-edge-shadow {
