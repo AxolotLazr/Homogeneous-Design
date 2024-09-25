@@ -12,7 +12,7 @@
     ],
 
     "display": "standalone",
-    "orientation": "fullscreen",
+    "orientation": "portrait",
     
     "start_url": "https://axolotlazr.github.io/Homogenous-Design",
 
