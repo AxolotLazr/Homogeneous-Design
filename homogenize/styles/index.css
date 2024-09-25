@@ -24,23 +24,6 @@ body:has(#the-fullscreen-button > input:checked) #the-theme-switch {
     left: calc(var(--buttonSize)*10);
 }
 
-#the-title-holder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: end;
-
-    position: relative;
-    width: 100%;
-    height: var(--boxSize);
-
-    margin: var(--edgeGutter);
-}
-#the-page-title {
-    display: flex;
-
-    position: relative;
-}
 #the-page-result {
     display: flex;
     flex-direction: column;

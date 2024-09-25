@@ -1,0 +1,20 @@
+{
+    "name": "Homogenous Design",
+    "short_name": "Homo",
+    "start_url": "https://axolotlazr.github.io/Homogenous-Design",
+    "description": "A website for learning visual design.",
+
+    "categories": ["education", "design", "research", "user interface", "UI"],
+    "shortcuts": [
+        {
+            "name": "Home",
+            "url": ""
+        }
+    ],
+
+    "display": "standalone",
+    "orientation": "portrait",
+
+    "background_color": "rgb(16, 16, 20)",
+    "theme_color": "rgb(88, 96, 255)"
+}

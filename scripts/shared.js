@@ -32,7 +32,7 @@ let Non = {
     },
     page: {
         name: 'Non',
-        link: '/developers/Non'
+        link: '/developers/Syntax-User'
     }
 };
 
