@@ -135,7 +135,7 @@ for (i = 0; i < pages.length; i++){
     let newCard = document.createElement('a');
     newCard.id = pages[i].name;
     newCard.classList = 'card outline glow';
-    newCard.href = (window.location.hostname.includes('io') ? '/Homogenous-Design':'')+pages[i].link+'/';
+    newCard.href = pages[i].link+'/';
     if (pages[i].link == currentPage){newCard.style.opacity = '0.5';}
         let newCardTitle = document.createElement('div');
         newCardTitle.classList = 'title';
