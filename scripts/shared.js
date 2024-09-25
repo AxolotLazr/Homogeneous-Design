@@ -21,19 +21,21 @@ let AxolotLazr = {
     page: {
         name: 'AxolotLazr',
         link: '/developers/AxolotLazr'
-    }
+    },
+    bio: ""
 };
-let Non = {
+let Syntax_User = {
     pfp:{
-        image: 'default.png',
-        zoom: '1',
-        offsetX: '0',
-        offsetY: '0'
+        image: 'Bikemner.png',
+        zoom: '1.3',
+        offsetX: '0.55',
+        offsetY: '0.9'
     },
     page: {
-        name: 'Non',
+        name: 'Syntax User',
         link: '/developers/Syntax-User'
-    }
+    },
+    bio: ""
 };
 
 let pages = [
@@ -50,7 +52,7 @@ let pages = [
     {
         name: 'Doom 1994',
         link: '/homogenize/Doom-1994',
-        creator: Non
+        creator: Syntax_User
     }
 ]
 

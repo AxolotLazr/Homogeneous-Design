@@ -68,3 +68,9 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
+#armor {
+    background-image: url(../../images/ours/Doom1994/Armor.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
