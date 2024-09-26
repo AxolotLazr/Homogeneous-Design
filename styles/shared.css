@@ -378,23 +378,36 @@ divSpacer.vertical {
     border-radius: calc(var(--buttonSize)/2 + var(--borderWidth));
 }
 
-.obvious {
-    display: flex;
-    align-self: center;
-    align-items: center;
-    align-content: center;
-    justify-self: center;
-    justify-items: center;
-    justify-content: center;
-    place-self: center;
-    place-items: center;
-    place-content: center;
+.obvious.text {
+    cursor: text;
+    user-select: none;
 
-    position: absolute;
+    display: flex;
+
+    position: relative;
+
+    padding: var(--gutterWidth);
+
+    border-style: solid;
+    border-width: var(--borderWidth);
+    border-radius: var(--borderRadius);
+    border-color: rgb(0,0,0,0);
 
     font-size: var(--textSizeLarge);
     text-align: center;
 }
+.obvious.holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+
+    position: relative;
+    left: 0px;
+    right: 0px;
+    height: var(--boxSize);
+
+    margin: var(--edgeGutter);}
 
 .theme-switch > .icon {
     margin: 0px;
@@ -581,7 +594,8 @@ divSpacer.vertical {
     justify-content: end;
 
     position: relative;
-    width: 100%;
+    left: 0px;
+    right: 0px;
     height: var(--boxSize);
 
     margin: var(--edgeGutter);

@@ -11,7 +11,13 @@ let themes = [
     'something'
 ];
 
-print(window.location.host)
+let onGitHub = window.location.hostname.includes('io')
+let subfolderDepth = "../".repeat(window.location.pathname.match(/\//g).length - (onGitHub ? 2 : 1));
+let hrefPrefix = window.location.protocol+'//'+window.location.host + (onGitHub?'/Homogenous-Design':'');
+let pathname = window.location.toString().replace(hrefPrefix,'');
+print(hrefPrefix);
+print(pathname);
+
 let AxolotLazr = {
     pfp: {
         image: 'SolidSnake.png',
@@ -78,13 +84,13 @@ let baseBody = `
         <div id="the-top-bar" class="edge-box top shadow outline glow horizontal-holder">
             <flexSpacer style="--size:0.1;max-width:var(--gutterWidth); order:1;"></flexSpacer>
         
-            <div id="the-top-bar-logo" class="logo" style="mask-image: url(`+hrefPrefix+`SVGs/logos/default.svg); order:2;"></div>
+            <div id="the-top-bar-logo" class="logo" style="mask-image: url(`+subfolderDepth+`SVGs/logos/default.svg); order:2;"></div>
         
             <flexSpacer style="--size:1;order:3;"></flexSpacer>
         
             <div id="the-search-holder" class="horizontal-holder outline horizontal-action-box glow">
                 <input id="the-search-input" type="text" placeholder="Search Homo">
-                <div id="the-search-icon" class="icon" style="mask-image: url(`+hrefPrefix+`SVGs/icons/search.svg);"></div>
+                <div id="the-search-icon" class="icon" style="mask-image: url(`+subfolderDepth+`SVGs/icons/search.svg);"></div>
             </div>
         
             <flexSpacer style="--size:1.1; order:5;"></flexSpacer>
@@ -92,12 +98,12 @@ let baseBody = `
             <div id="the-top-bar-end-holder" class="horizontal-holder" style="order:6;">
                 <label id="the-index-button" class="outline button horizontal-action-box glow matter-child">
                     <input type="button" onclick="handleIntrusiveBox('index')">
-                    <div class="icon" style="mask-image: url(`+hrefPrefix+`SVGs/icons/list.svg);"></div>
+                    <div class="icon" style="mask-image: url(`+subfolderDepth+`SVGs/icons/list.svg);"></div>
                 </label>
                 <flexSpacer style="--size:1; max-width:var(--buttonSize);"></flexSpacer>
                 <label id="the-options-button" class="outline button horizontal-action-box glow matter-child spin">
                     <input type="button" onclick="handleIntrusiveBox('options')">
-                    <div class="icon" style="mask-image: url(`+hrefPrefix+`SVGs/icons/settings.svg);"></div>
+                    <div class="icon" style="mask-image: url(`+subfolderDepth+`SVGs/icons/settings.svg);"></div>
                 </label>
             </div>
 
@@ -111,7 +117,7 @@ let baseBody = `
         <div id="the-bottom-bar" class="edge-box bottom horizontal-holder">
             <label id="the-theme-switch" class="theme-switch shadow outline button glow spin">
                 <input type="button" onclick="toggleTheme()">
-                <div class="icon" style="mask-image: url(`+hrefPrefix+`SVGs/icons/dark.svg);"></div>
+                <div class="icon" style="mask-image: url(`+subfolderDepth+`SVGs/icons/dark.svg);"></div>
             </label>
             <flexSpacer style="--size:1;"></flexSpacer>
         </div>
@@ -139,7 +145,7 @@ for (i = 0; i < pages.length; i++){
     newCard.id = pages[i].name;
     newCard.classList = 'card outline glow';
     newCard.href = (window.location.hostname.includes('io') ? '/Homogenous-Design':'')+pages[i].link+'/';
-    if (pages[i].link == currentPage){newCard.style.opacity = '0.5';}
+    if (pages[i].link+'/' == pathname){newCard.style.opacity = '0.5';}
         let newCardTitle = document.createElement('div');
         newCardTitle.classList = 'title';
         newCardTitle.innerText = pages[i].name;
@@ -147,8 +153,8 @@ for (i = 0; i < pages.length; i++){
         
         let newCardCreator = document.createElement('a');
         newCardCreator.classList = 'creator outline glow';
-        newCardCreator.href = (window.location.hostname.includes('io') ? '/Homogenous-Design':'')+pages[i].creator.page.link;
-        newCardCreator.style.backgroundImage = 'url('+hrefPrefix+'images/PFPs/'+pages[i].creator.pfp.image+')';
+        newCardCreator.href = hrefPrefix+pages[i].creator.page.link;
+        newCardCreator.style.backgroundImage = 'url('+subfolderDepth+'images/PFPs/'+pages[i].creator.pfp.image+')';
         newCardCreator.style.backgroundSize = 'calc(100%*'+pages[i].creator.pfp.zoom+')';
         newCardCreator.style.backgroundPosition = pages[i].creator.pfp.offsetX*100+'% '+pages[i].creator.pfp.offsetY*100+'%';
         newCardCreator.style.backgroundRepeat = 'no-repeat';
@@ -207,18 +213,18 @@ function updateTheme() {
     if (ColorTheme) {
         currentTheme = HotTheme2;
         for (i = 0; i < themeSwitches.length; i++){
-            themeSwitches[i].getElementsByClassName('icon')[0].style.maskImage = 'url('+hrefPrefix+'SVGs/icons/light.svg)';
+            themeSwitches[i].getElementsByClassName('icon')[0].style.maskImage = 'url('+subfolderDepth+'SVGs/icons/light.svg)';
         }
         console.log('theme icon set to light');
     } else {
         currentTheme = HotTheme1;
         for (i = 0; i < themeSwitches.length; i++){
-            themeSwitches[i].getElementsByClassName('icon')[0].style.maskImage = 'url('+hrefPrefix+'SVGs/icons/dark.svg)';
+            themeSwitches[i].getElementsByClassName('icon')[0].style.maskImage = 'url('+subfolderDepth+'SVGs/icons/dark.svg)';
         }
         console.log('theme icon set to dark');
     }
     
-    document.getElementById('theme').setAttribute('href', ''+hrefPrefix+'styles/themes/'+currentTheme+'.css');
+    document.getElementById('theme').setAttribute('href', ''+subfolderDepth+'styles/themes/'+currentTheme+'.css');
     console.log('theme set to ' + currentTheme)
 }
 

@@ -1,2 +1,0 @@
-let hrefPrefix = '';
-let currentPage = '';
