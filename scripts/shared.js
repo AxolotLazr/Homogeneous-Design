@@ -11,6 +11,7 @@ let themes = [
     'something'
 ];
 
+print(location.host)
 let AxolotLazr = {
     pfp: {
         image: 'SolidSnake.png',
@@ -169,6 +170,10 @@ let theIntrusiveHolder = document.getElementById('the-intrusive-holder');
 
 let intrusiveTabOpen = false;
 let intrusiveTab = 'index';
+
+function print(stuff) {
+    console.log(stuff);
+}
 
 function handleIntrusiveBox(from) {
     if (intrusiveTab == from) {
