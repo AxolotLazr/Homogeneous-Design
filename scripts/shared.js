@@ -11,7 +11,7 @@ let themes = [
     'something'
 ];
 
-print(location.host)
+print(window.location.host)
 let AxolotLazr = {
     pfp: {
         image: 'SolidSnake.png',
