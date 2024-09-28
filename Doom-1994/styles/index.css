@@ -37,20 +37,32 @@ body {
 
     width: calc(var(--tinyHeit) + 8px);
     height: calc(var(--tinyHeit)*3 + 24px);
-    background-color: green;
+    background-color: rgb(79,79,79);
 }
 .key {
     width: var(--tinyHeit);
     height: var(--tinyHeit);
 }
 #key-blue{
-    background-color: plum;
+    background-color:  rgb(58, 58, 58);
+    background-image: url(../images/Key\ Blue.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 #key-yellow {
-    background-color: black;
+    background-color:  rgb(58, 58, 58);
+    background-image: url(../images/Key\ Yellow.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 #key-red {
-    background-color: yellowgreen;
+    background-color:  rgb(58, 58, 58);
+    background-image: url(../images/Keycard.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .empty {
     background-color: blue;
@@ -69,7 +81,7 @@ body {
     background-repeat: no-repeat;
 }
 #armor {
-    background-image: url(../../images/ours/Doom1994/Armor.png);
+    background-image: url(../../Doom-1994/images/Armor.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
