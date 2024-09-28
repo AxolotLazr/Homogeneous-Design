@@ -1,6 +1,7 @@
 :root {
     --hudHeit: 128px;
     --tinyHeit: 36px;
+    --borderWidth: 4px;
 }
 body {
     background-color: gray;
@@ -34,9 +35,17 @@ body {
     gap: 4px;
     align-items: center;
     justify-content: center;
-    outline: auto black;
+    /* outline: auto black; */
     /* this thing ^ SORRY FOR MAKING YOU DO THIS*/
-
+    /* It's no problem at all, trust */
+    /* You used "outline," in this case you need to use "border" */
+    /* also "auto" is not a parameter that exists for outlines/borders */
+    /* and the reason the outline did not desplay is because it didn't have a width or a style */
+    /* ↓ this should work ↓ */
+    border-style: solid;
+    border-width: var(--borderWidth);
+    background-color: rgb(0,0,0);
+    
     width: calc(var(--tinyHeit) + 8px);
     height: calc(var(--tinyHeit)*3 + 24px);
     background-color: rgb(79,79,79);
