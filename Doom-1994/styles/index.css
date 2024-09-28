@@ -34,6 +34,8 @@ body {
     gap: 4px;
     align-items: center;
     justify-content: center;
+    outline: auto black;
+    /* this thing ^ SORRY FOR MAKING YOU DO THIS*/
 
     width: calc(var(--tinyHeit) + 8px);
     height: calc(var(--tinyHeit)*3 + 24px);
@@ -68,7 +70,7 @@ body {
     background-color: blue;
 }
 #gun-ammo{
-    background-color: blueviolet;
+    background-color: gray;
 }
 #weapons {
     flex-grow: 0;
