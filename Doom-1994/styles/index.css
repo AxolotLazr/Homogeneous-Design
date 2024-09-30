@@ -1,6 +1,7 @@
 :root {
     --hudHeit: 128px;
     --tinyHeit: 36px;
+    --oneHeit: 4px;
 }
 body {
     background-color: gray;
@@ -29,7 +30,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     border-style: solid;
-    border-width: var(--borderWidth);
+    border-width: var(--oneHeit);
     background-color: rgb(0,0,0);
 }
 #keys {
@@ -87,25 +88,46 @@ body {
 }
 #gun-ammo{
     background-color: darkslategray;
-    background-image: url(../../Doom-1994/images/ammo.png);
+    background-image: url(../images/ammo.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 #weapons {
+    display: flex;
     flex-grow: 0;
+    flex-wrap: wrap;
 
-    width: var(--hudHeit);
+    position: relative;
+    width: calc(var(--tinyHeit)*3 + var(--oneHeit)*4);
     background-color: rgb(58, 58, 58); 
-    background-image: url(../images/New\ Weapons.png);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
     border-style: solid;
     border-width: 3px;
 }
+#weapons-holder {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--oneHeit);
+
+    width: calc(var(--tinyHeit)*3 + var(--oneHeit)*2);
+    height: calc(var(--tinyHeit)*2 + var(--oneHeit));
+
+    padding: var(--oneHeit);
+}
+.weapon {
+    display: flex;
+
+    position: relative;
+    width: var(--tinyHeit);
+    height: var(--tinyHeit);
+    background-image: url(../images/UHH.png);
+    background-size: cover;
+}
+.weapon > a {
+    
+}
 #armor {
-    background-image: url(../../Doom-1994/images/final.png);
+    background-image: url(..//images/final.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -115,7 +137,7 @@ body {
 #health {
     border-style: solid;
     border-width: 2px;
-    background-image: url(../../Doom-1994/images/HEALTH.png);
+    background-image: url(../images/HEALTH.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

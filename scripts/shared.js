@@ -42,7 +42,7 @@ let Syntax_User = {
         name: 'Syntax User',
         link: '/developers/Syntax-User'
     },
-    bio: ""
+    bio: "Women hate me, fish fear me"
 };
 
 let pages = [
