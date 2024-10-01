@@ -1,0 +1,33 @@
+:root {
+    background-color: rgb(128,128,128);
+    color: rgb(0, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+
+    --background-gap: 128px;
+    --main-color: rgb(239,239,239);
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+}
+#mainHolder {
+    display: flex;
+
+    position: absolute;
+    width: 970px;
+    max-width: 100vw;
+    height: 100vh;
+}
+#main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-color);
+}
