@@ -1,3 +1,6 @@
+// import { Octokit, App } from "https://esm.sh/octokit?dts";
+// const octokit = new Octokit({auth: ''});
+
 let ColorTheme = false;
 let HotTheme1 = 'corpo-dark';
 let HotTheme2 = 'plum';
@@ -18,6 +21,12 @@ let pathname = window.location.toString().replace(hrefPrefix,'');
 print(hrefPrefix);
 print(pathname);
 
+let rawCommits = [];
+fetch('https://api.github.com/repos/axolotlazr/Homogenous-Design/commits?path=/homogenize/index.html')
+.then(response => {rawCommits.push(response.json())});
+
+print(rawCommits[0]);
+
 let AxolotLazr = {
     pfp: {
         image: 'SolidSnake.png',
@@ -31,6 +40,7 @@ let AxolotLazr = {
     },
     bio: ""
 };
+
 let Syntax_User = {
     pfp:{
         image: 'Bikemner.png',
@@ -48,20 +58,17 @@ let Syntax_User = {
 let pages = [
     {
         name: 'Home',
-        link: '',
-        creator: AxolotLazr
+        link: ''
     },
     {
         name: 'Homogenize',
-        link: '/homogenize',
-        creator: AxolotLazr
+        link: '/homogenize'
     },
     {
         name: 'Doom 1994',
-        link: '/homogenize/Doom-1994',
-        creator: Syntax_User
+        link: '/homogenize/Doom-1994'
     }
-]
+];
 
 let baseBody = `
 <div id="the-baseline">
@@ -151,14 +158,14 @@ for (i = 0; i < pages.length; i++){
         newCardTitle.innerText = pages[i].name;
         newCard.appendChild(newCardTitle);
         
-        let newCardCreator = document.createElement('a');
-        newCardCreator.classList = 'creator outline glow';
-        newCardCreator.href = hrefPrefix+pages[i].creator.page.link;
-        newCardCreator.style.backgroundImage = 'url('+subfolderDepth+'images/PFPs/'+pages[i].creator.pfp.image+')';
-        newCardCreator.style.backgroundSize = 'calc(100%*'+pages[i].creator.pfp.zoom+')';
-        newCardCreator.style.backgroundPosition = pages[i].creator.pfp.offsetX*100+'% '+pages[i].creator.pfp.offsetY*100+'%';
-        newCardCreator.style.backgroundRepeat = 'no-repeat';
-        newCard.appendChild(newCardCreator);
+        // let newCardCreator = document.createElement('a');
+        // newCardCreator.classList = 'creator outline glow';
+        // newCardCreator.href = hrefPrefix+pages[i].creator.page.link;
+        // newCardCreator.style.backgroundImage = 'url('+subfolderDepth+'images/PFPs/'+pages[i].creator.pfp.image+')';
+        // newCardCreator.style.backgroundSize = 'calc(100%*'+pages[i].creator.pfp.zoom+')';
+        // newCardCreator.style.backgroundPosition = pages[i].creator.pfp.offsetX*100+'% '+pages[i].creator.pfp.offsetY*100+'%';
+        // newCardCreator.style.backgroundRepeat = 'no-repeat';
+        // newCard.appendChild(newCardCreator);
 
     document.getElementById('the-index-body').appendChild(newCard);
 }
